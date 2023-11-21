@@ -4,28 +4,26 @@ gems:
   - jekyll-paginate
 
 # Site settings
-title: "Mediator"
+title: "HoonC-corgi's Blog"
 description: > # this means to ignore newlines until "email:"
    A Jekyll theme - Medium inspired
 
-email: a-mail@mail.mail
+email: tgh7544@naver.com
 #blog logo
-logo: "/assets/images/df_logo.jpg"
+logo: "/assets/images/author.jpg"
 float_logo: true # true, false (default)
 
 # blog cover
-cover: "/assets/images/cA4aKEIPQrerBnp1yGHv_IMG_9534-3-2.jpg"
+cover: "/assets/images/blog_cover.jpg"
 
-name: 'Dirk Fabisch'
-author: 'Dirk Fabisch'
+name: 'HoonC-corgi'
+author: 'HoonC-corgi'
 author_image: "/assets/images/author.jpg"
 
 paginate:	5
 
-url: "http://myblog.***.***" # the base hostname & protocol for your site
+url: "HoonC-corgi.github.io" # the base hostname & protocol for your site
 baseurl: ""
-#used to display twitter cards
-twitter_handle: '@dirkfabisch'
 
 #fill in disqus shortname to use disqus
 #disqus: disqus-shortname
@@ -34,12 +32,12 @@ twitter_handle: '@dirkfabisch'
 
 # social icons and sharing options
 social:
-  - icon:	twitter
-    url:	https://twitter.com/dirkfabisch
-    desc: Follow me on twitter
-    share_url: http://twitter.com/share
-    share_title: ?text=
-    share_link: "&amp;url="
+  - icon:	instagram
+    url:	https://instagram/_ftxm_sx.02/
+    desc: Follow/DM me on IG
+    share_url:
+    share_title:
+    share_link:
 
 #  - icon:	facebook
 #    url:	https://facebook.com/???
@@ -49,7 +47,7 @@ social:
 #    share_link: "&amp;u="
 
   - icon:	github
-    url:	https://github.com/dirkfabisch
+    url:	https://github.com/HoonC-corgi
     desc:	Fork me on github
     share_url:
     share_title:
