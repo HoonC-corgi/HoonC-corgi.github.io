@@ -1,78 +1,47 @@
-mediator
-========
+<div align=center>
+        <img src="https://capsule-render.vercel.app/api?type=transparent&text=[HoonC-corgi's%20Github%20Blog]&animation=twinkling&fontSize=70&fontColor=4B4B77" />
+</div>
 
-A medium inspired Jekyll blog theme. The basic idea came from the Ghost theme
-[Readium 2.0](http://www.svenread.com/readium-ghost-theme/). I use mediator on my own blog [The Base](http://blog.base68.com).
+<div align=center>
+        <h1>🖥️ Tech Stack 🖥️</h1>
+        <p>📖 Platforms & Languages 📖</p>
+</div>
 
-Screenshots
---------
-![screenshot](/assets/images/screenshot1.jpg)
-![screenshot](/assets/images/screenshot2.jpg)
-![screenshot](/assets/images/screenshot3.jpg)
+<div align="center">
+        <img src="https://img.shields.io/badge/JAVA-FF7800?style=flat&logo=java&logoColor=white" />
+        <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" />
+        <img src="https://img.shields.io/badge/YOLO-00FFFF?style=flat&logo=YOLO&logoColor=black" />
+        <img src="https://img.shields.io/badge/Anaconda-44A833?style=flat&logo=anaconda&logoColor=white" />
+        <img src="https://img.shields.io/badge/Android-3DDC84?style=flat&logo=android&logoColor=white" />
+</div>
 
-Features
--------
-* Fully Responsive layout
-* Use header images in articles, if you want to (add tag "image" and url to the image in the front matter section of a post)
-* Minimal design
-* Featured article support
-* FontAwesome implemented for easy use of icons fonts
-* Free & Open Source Font usage
+<br>
 
-Getting Started
----
-- [Fork this repository](https://github.com/dirkfabisch/mediator)
-- Clone it: `git clone https://github.com/YOUR-USER/mediator`
-- Install the requried gems ([GitHub Pages](https://github.com/github/pages-gem), [Bourbon](https://github.com/thoughtbot/bourbon) and [Jekyll](https://github.com/jekyll/jekyll), [Jemoji](https://github.com/jekyll/jemoji)): `bundle install`
-- Run the jekyll server: `bundle exec jekyll serve`
+<div align=center>
+        <p>🖥️ System & IDE 🖥️</p>
+</div>
+<div align="center">
+        <img src="https://img.shields.io/badge/macOS-000000?style=flat&logo=macos&logoColor=white" />
+        <img src="https://img.shields.io/badge/PyCharm-000000?style=flat&logo=pycharm&logoColor=white" />
+        <img src="https://img.shields.io/badge/JetBrains-000000?style=flat&logo=jetbrains&logoColor=white" />
+        <img src="https://img.shields.io/badge/Android%20Studio-3DDC84?style=flat&logo=androidstudio&logoColor=white" />
+</div>
 
-You should have a server up and running locally at <http://localhost:4000>.
+<br>
 
-Configuration
------
+<div align=center>
+        <p>💡 Contacts 💡</p>
+</div>
 
-The main settings happen in side of the _config.yml file:
+<div align=center>
+        <a href="mailto:tgh7544@naver.com">
+                <img src="https://img.shields.io/badge/Naver%20mail-30B980?style=flat&logo=naver&logoColor=white" />
+        <a href="https://www.instagram.com/_ftxm_sx.02/">
+                <img src="https://img.shields.io/badge/Instagram-E4405F?style=flat&logo=instagram&logoColor=white" />
+        </a>
+</div>
+                
+<br>
 
-### Site
-
-Main settings for the site
-
-* **title**: name of your site
-* **description**: description of your site
-* **logo**: small logo for the site (300x * 300x)
-* **cover**: large background image on the index page
-
-* **name**: name site owner
-* **email**: mail address of the site owner
-* **author**: author name
-* **author_image**: small image of author (300x * 300px)
-* **disqus**: add a disqus forum for your post
-
-### Social
-
-The template allows to add all major social platforms to your site.
-Fill the the form for each platform. If you leave the share_* entries empty, the sharing buttons below a post are not shown.  If you leave the **url** and **desc** empty the icons are not shown on the index page, but the share icons on the article pages remains untouched (Thanks to [Phil](https://github.com/philsturgeon))
-
-* **icon**:	name of social platform (must match a name of [font-awsome](http://fortawesome.github.io/Font-Awesome/) icon set )
-* **url**:	url of your account
-* **desc**: slogan of the platform
-* **share_url**: share url
-* **share_title**: first part of url for the title
-* **share_link**: second part of the share url for the link to the post
-
-The Liquid template engine will magical combine the different parts to a share url.
-
-```
-http://twitter.com/share?text=post_title&amp;url=post_url
-````
-
-See [_config.yml](https://github.com/dirkfabisch/mediator/blob/master/_config.yml) for more examples.
-
-Licensing
----------
-
-[MIT](https://github.com/dirkfabisch/mediator/blob/master/LICENCE) with no added caveats, so feel free to use this on your site without linking back to me or using a disclaimer or anything silly like that.
-
-Contact
--------
-I'd love to hear from you at [@dirkfabisch](https://twitter.com/dirkfabisch). Feel free to open issues if you run into trouble or have suggestions. Pull Requests always welcome.
+[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=HoonC-corgi)](https://github.com/HoonC-corgi?tab=repositories)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=HoonC-corgi)](https://github.com/HoonC-corgi?tab=repositories)
