@@ -25,6 +25,7 @@ paginate:	5
 url: "HoonC-corgi.github.io" # the base hostname & protocol for your site
 baseurl: ""
 
+future: true
 #fill in disqus shortname to use disqus
 #disqus: disqus-shortname
 
@@ -52,6 +53,8 @@ social:
     share_url:
     share_title:
     share_link:
+    
+ 
 
 #  - icon:	google-plus
 #    url:	https://google.com/???
