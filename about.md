@@ -56,8 +56,8 @@ After graduating from an undergraduate school, I dream of becoming a researcher 
 
 <div align=center>
         <a href="mailto:tgh7544@naver.com">
-        </a>
                 <img src="https://img.shields.io/badge/Naver%20mail-30B980?style=flat&logo=naver&logoColor=white" />
+        </a>
         <a href="https://www.instagram.com/_ftxm_sx.02/">
                 <img src="https://img.shields.io/badge/Instagram-E4405F?style=flat&logo=instagram&logoColor=white" />
         </a>
