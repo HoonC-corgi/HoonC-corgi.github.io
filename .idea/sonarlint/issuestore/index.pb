@@ -97,3 +97,24 @@ j
 e_posts/2024-01-18-YOLOv8 콘크리트 크랙 탐지 (2) - 학습 데이터 셋 준비에 관하여.md,7/6/764a9e5a4c954fdd1f7dc2168064d178ef0c4ee8
 f
 6_posts/2023-11-22-깃허브 블로그 첫 게시글.md,7/e/7eb212c4c7e37f39c98bf2efaf0a6e19f9daedcd
+=
+css/main.sass,c/0/c031be9e1b65069d3cd8f9b6974dbea32a0d4448
+A
+css/normalize.css,e/9/e9b0acb935a57febf91eee98bba0eedd1c156453
+=
+css/print.css,6/5/650bd65c05b40bda80d89b5a9251437551651e73
+U
+%assets/favicion.ico/browserconfig.xml,5/5/55195edc50430b818697f07a0811a1d58dc1b13b
+Q
+!assets/favicion.ico/manifest.json,9/b/9be538760cbc8082b99cda601775ef41c03d0b1f
+8
+about.md,1/f/1fc61a8d81eedce850da8699e8aaf374e5a4b1f2
+8
+feed.xml,2/2/22950ffc308261850157fa2318b4413a862cca26
+7
+Gemfile,d/e/de3150c01c3a946a6168173c4116741379fe3579
+:
+
+index.html,f/6/f6013a00b362253c64368d6eebc50ea2131754e2
+7
+LICENCE,6/e/6e0ad2b047414107e8ce2f294fa40d216b5b68f9
