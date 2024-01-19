@@ -89,3 +89,9 @@ Q.idea/sonarlint/securityhotspotstore/b/b/bbf202272a96de5cd6b6828ffdc55fb3ce4528
 Q.idea/sonarlint/securityhotspotstore/b/0/b04578cffb47b1e57970601a0cacef6081245859,f/2/f235835ed945e2bdc599be5466a48e135a881845
 Q
 !_posts/2023-10-26-Post Testing.md,9/a/9a60e09076d3aa63232aa80f836eef6a4222313f
+j
+:_posts/2023-11-24-YOLOv8 콘크리트 크랙 탐지 (1).md,f/5/f57e77e118456de026988c1c6fba59dba097665f
+�
+^_posts/2023-11-24-YOLOv8 콘크리트 크랙 탐지 (1) - 학습 환경 구축에 관하여.md,2/b/2bda0053758b716c32b6782dc11c654c4761a9d7
+�
+e_posts/2024-01-18-YOLOv8 콘크리트 크랙 탐지 (2) - 학습 데이터 셋 준비에 관하여.md,7/6/764a9e5a4c954fdd1f7dc2168064d178ef0c4ee8
