@@ -1,18 +1,12 @@
 
-j
-:_posts/2024-01-18-YOLOv8 콘크리트 크랙 탐지 (2).md,2/6/26b7c050d320f6903a549af160d14810b347fbb9
 9
 	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 �
 Q.idea/sonarlint/securityhotspotstore/8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d,1/0/10a03f31c4dce92cb371e761ce9429428bb6c176
-w
-G.idea/sonarlint/issuestore/2/6/26b7c050d320f6903a549af160d14810b347fbb9,2/b/2beeddc4bfc21092b9f27e9f5a6f2c8b521434cb
 S
 #.idea/sonarlint/issuestore/index.pb,9/f/9fe84ebb15faf917b7def6236dba604453cc61e0
 w
 G.idea/sonarlint/issuestore/8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d,b/4/b4a0b63ce8560bbc5de0f9995c20cc861dc2adb3
-�
-Q.idea/sonarlint/securityhotspotstore/2/6/26b7c050d320f6903a549af160d14810b347fbb9,6/7/67c914112c2e8afde341a65906ff51e444418493
 ]
 -.idea/sonarlint/securityhotspotstore/index.pb,8/8/88a9255124c95bdc913197c120a8d560edc59c8e
 �
@@ -89,8 +83,6 @@ Q.idea/sonarlint/securityhotspotstore/b/b/bbf202272a96de5cd6b6828ffdc55fb3ce4528
 Q.idea/sonarlint/securityhotspotstore/b/0/b04578cffb47b1e57970601a0cacef6081245859,f/2/f235835ed945e2bdc599be5466a48e135a881845
 Q
 !_posts/2023-10-26-Post Testing.md,9/a/9a60e09076d3aa63232aa80f836eef6a4222313f
-j
-:_posts/2023-11-24-YOLOv8 콘크리트 크랙 탐지 (1).md,f/5/f57e77e118456de026988c1c6fba59dba097665f
 �
 ^_posts/2023-11-24-YOLOv8 콘크리트 크랙 탐지 (1) - 학습 환경 구축에 관하여.md,2/b/2bda0053758b716c32b6782dc11c654c4761a9d7
 �
@@ -118,3 +110,31 @@ Q
 index.html,f/6/f6013a00b362253c64368d6eebc50ea2131754e2
 7
 LICENCE,6/e/6e0ad2b047414107e8ce2f294fa40d216b5b68f9
+E
+_includes/header.html,4/b/4b76f423d99efef5ab275ff40ac08f0c2df2c7f9
+C
+_includes/head.html,c/5/c58923d48aa9504a82e1a3191cf50bb8c51ad4de
+E
+_includes/footer.html,7/b/7bafeea8911e2ce671479ece265a20c5eb026da8
+;
+_config.yml,c/d/cd089ae45ce870c45e434019e8f1ed4f066cd425
+B
+_sass/_base.scss__,8/d/8d5bcd68fbe91831920d7e25d751f26bbff2dfca
+D
+_sass/_layout.scss__,5/2/52933dfe9d00fe49e097ebfc9fa3b2fad40a1307
+O
+_sass/_syntax-highlighting.scss,e/7/e7626e2b0df1212518d7d4bee61459a6120c9f47
+K
+_sass/bourbon/_bourbon.scss,e/a/ea08a9ae2a13788a32850664eddeba5439238af0
+_
+/_sass/bourbon/_bourbon-deprecated-upcoming.scss,3/7/375d863b29b2b92e43babd704745a93496efd1b1
+[
++_sass/bourbon/settings/_asset-pipeline.scss,9/3/93a0fe238301c05d0649832c1ca411c0b33b6aea
+U
+%_sass/bourbon/settings/_prefixer.scss,f/a/fae9f12fead59e4aa1be3cf93f17e12c04e93b2d
+U
+%_sass/bourbon/settings/_px-to-em.scss,4/0/402356de9af7f94b242dc95396fabd7df6a1de76
+Y
+)_sass/bourbon/helpers/_convert-units.scss,5/7/57b98d5c3999b119df4b7fdc537baf2975ed9784
+b
+2_sass/bourbon/helpers/_linear-gradient-parser.scss,6/3/63bec85fd28ee4c894e6559e5138d5db5d761c22
