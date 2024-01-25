@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 프로필
+title: About me
 permalink: /about/
 ---
 ## About me
@@ -20,11 +20,12 @@ After graduating from an undergraduate school, I dream of becoming a researcher 
 ---
 
 <div align=center>
-        <img src="https://capsule-render.vercel.app/api?type=transparent&text=[HoonC-corgi's%20Blog]&animation=twinkling&fontSize=70&fontColor=4B4B77" />
+    <h2> Tech Stack </h2>
 </div>
 
+---
+
 <div align=center>
-        <h1>🖥️ Tech Stack 🖥️</h1>
         <p>📖 Platforms & Languages 📖</p>
 </div>
 
@@ -67,7 +68,9 @@ After graduating from an undergraduate school, I dream of becoming a researcher 
 
 ---
 
-> #### Profile  
+## Profile
+
+---
 >  
 >  
 > ***Seong Hun KIM***  
