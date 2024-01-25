@@ -138,3 +138,9 @@ Y
 )_sass/bourbon/helpers/_convert-units.scss,5/7/57b98d5c3999b119df4b7fdc537baf2975ed9784
 b
 2_sass/bourbon/helpers/_linear-gradient-parser.scss,6/3/63bec85fd28ee4c894e6559e5138d5db5d761c22
+E
+_layouts/default.html,8/8/88dc137ae43bf7a2fa27381f48221b3eb9908aac
+B
+_layouts/page.html,8/b/8b421129e621bb2aca5057f6bdb5e5905633134c
+B
+_layouts/post.html,e/7/e767dacdd408265f818281195cc74a31191ab7cd
