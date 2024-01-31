@@ -124,8 +124,6 @@ J
 _includes/javascripts.html,f/4/f495eef7a4a150bf02a82d68d55f0712a6d20972
 V
 &_sass/bourbon/addons/_font-family.scss,b/4/b4c0ec4d92b03bd88a20bd0c73bc1c52e6fcc158
-�
-V_posts/2024-01-29-YOLOc8 콘크리트 크랙 탐지(3) - 모델 학습에 관하여.md,5/9/59dd7962fedf54829508090aba6a5d012ba7719f
 w
 G.idea/sonarlint/issuestore/5/7/57b98d5c3999b119df4b7fdc537baf2975ed9784,a/6/a63213a622eb58317c220e33196af234afe049e3
 w
@@ -172,8 +170,6 @@ Q.idea/sonarlint/securityhotspotstore/8/b/8b421129e621bb2aca5057f6bdb5e590563313
 Q.idea/sonarlint/securityhotspotstore/f/4/f495eef7a4a150bf02a82d68d55f0712a6d20972,8/5/85ba139c5c1700945b40e1dcc3a14a43e2dd2316
 w
 G.idea/sonarlint/issuestore/f/4/f495eef7a4a150bf02a82d68d55f0712a6d20972,3/a/3a609075e45e1df317004252e473f5ea345f17aa
-�
-V_posts/2024-01-29-YOLOv8 콘크리트 크랙 탐지(3) - 모델 학습에 관하여.md,5/3/533e273473d0a34aa168811d9f7a0b101202e1a0
 w
 G.idea/sonarlint/issuestore/b/4/b4c0ec4d92b03bd88a20bd0c73bc1c52e6fcc158,8/0/80017c02024920178a7d3a4df243ec78ff56b30c
 �
@@ -320,3 +316,7 @@ Q.idea/sonarlint/securityhotspotstore/c/d/cd089ae45ce870c45e434019e8f1ed4f066cd4
 Q.idea/sonarlint/securityhotspotstore/f/a/fae9f12fead59e4aa1be3cf93f17e12c04e93b2d,a/0/a0d6332f35112194521a8b8d9dfccb253bd41a0f
 �
 Q.idea/sonarlint/securityhotspotstore/6/3/63bec85fd28ee4c894e6559e5138d5db5d761c22,7/8/78b194a24daf2ed348d527c15e7895ef000a637f
+�
+W_posts/2024-01-29-YOLOv8 콘크리트 크랙 탐지 (3) - 모델 학습에 관하여.md,4/d/4dad0298c4eb06b1a9dbe757007f2fa29f11efec
+�
+j_posts/2024-01-29-YOLOv8 콘크리트 크랙 탐지 (4) - 응용 어플리케이션 개발에 관하여.md,d/7/d72a41bff56d7cd58275e281b10b7219ebef89c4
