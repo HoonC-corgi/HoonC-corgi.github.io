@@ -69,3 +69,8 @@ social:
 #    share_url:
 #    share_title:
 #    share_link:
+
+
+sass:
+  sass_dir: _sass  # SASS 파일이 저장되는 디렉터리
+  style: compressed  # 컴파일된 CSS의 스타일 설정 (예: compressed, expanded)
