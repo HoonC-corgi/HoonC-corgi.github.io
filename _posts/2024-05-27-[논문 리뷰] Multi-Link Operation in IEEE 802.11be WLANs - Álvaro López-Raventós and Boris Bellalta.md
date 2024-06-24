@@ -7,6 +7,33 @@ published: True
 
 -----
 
+<!-- TOC -->
+* [**[논문 리뷰] Multi-Link Operation in IEEE 802.11be WLANs**](#논문-리뷰-multi-link-operation-in-ieee-80211be-wlans)
+  * [Álvaro López-Raventós and Boris Bellalta](#álvaro-lópez-raventós-and-boris-bellalta)
+  * [논문 리뷰를 시작하며](#논문-리뷰를-시작하며)
+  * [한글 번역 및 코멘트](#한글-번역-및-코멘트)
+    * [Abstract](#abstract)
+      * [Notes](#notes)
+    * [Introduction](#introduction)
+      * [Notes](#notes-1)
+    * [Multi-Link Operation](#multi-link-operation)
+      * [Architecture](#architecture)
+        * [Notes](#notes-2)
+      * [Transmission Modes](#transmission-modes)
+        * [Notes](#notes-3)
+      * [Management](#management)
+        * [Notes](#notes-4)
+      * [Power Save](#power-save)
+        * [Notes](#notes-5)
+    * [Traffic Management](#traffic-management)
+      * [Notes](#notes-6)
+    * [Performance Evaluation](#performance-evaluation)
+    * [Open Issues and Challenges](#open-issues-and-challenges)
+      * [Notes](#notes-7)
+<!-- TOC -->
+
+---
+
 ## 논문 리뷰를 시작하며
 
  연구실에서 진행하는 논문 세미나를 준비하는 과정에서 해당 내용들을 그냥 넘어가지 않고, 블로그에 남겨 놓는다면 추후에 내가 공부하면서 어려워 했던 부분이나,
