@@ -4,7 +4,7 @@ title: "About me"
 permalink: /about/
 ---
 
-![_Profile_](https://github-production-user-asset-6210df.s3.amazonaws.com/118245330/357219811-5cbca47f-8c0a-44ec-a2d2-d581a0de579f.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240812%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240812T223222Z&X-Amz-Expires=300&X-Amz-Signature=91b5e6e6a980a6711859a2dbb18f78842c15f586bd25e649c025d21f691d5de2&X-Amz-SignedHeaders=host&actor_id=118245330&key_id=0&repo_id=801084372)
+![Profile](./assets/images/author.jpg)
 
 # Korean
 안녕하세요, 영남대학교 컴퓨터공학과 학부생 과정 중인 HoonC-corgi, 김성훈입니다.  
