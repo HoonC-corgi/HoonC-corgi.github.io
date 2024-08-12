@@ -1,6 +1,4 @@
----
-published: True
----
+
 
 # **An LSTM-based Approach for Overall Quality Prediction in HTTP Adaptive Streaming**
 
