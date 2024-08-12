@@ -20,21 +20,4 @@
 <meta name="theme-color" content="#ffffff">
 
 
-<!-- header.html -->
-<div class="custom-links">
-    <a href="{{ site.baseurl }}/">Home</a>
-
-    <!-- 카테고리별 버튼 추가 -->
-    {% for category in site.categories %}
-    <a href="{{ site.baseurl }}/categories/{{ category[0] | slugify }}">{{ category[0] }}</a>
-    {% endfor %}
-
-    <!-- All Posts 버튼 추가 -->
-    <a href="{{ site.baseurl }}/">All Posts</a>
-
-    <a href="{{ "/about/" | prepend: site.baseurl }}">About Me</a>
-</div>
-
-
-
 <!-- header end -->
