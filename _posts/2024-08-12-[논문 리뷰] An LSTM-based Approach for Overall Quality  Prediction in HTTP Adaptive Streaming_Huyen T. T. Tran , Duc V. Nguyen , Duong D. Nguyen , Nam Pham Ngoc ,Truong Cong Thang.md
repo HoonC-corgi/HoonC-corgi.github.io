@@ -1,7 +1,12 @@
 ---
-title: "An LSTM-based Approach for Overall Quality Prediction in HTTP Adaptive Streaming - Huyen T. T. Tran, Duc V. Nguyen, Duong D. Nguyen, Nam Pham Ngoc and Truong Cong Thang"
+title: "An LSTM-based Approach for Overall Quality Prediction in HTTP Adaptive Streaming"
 published: True
+excerpt: "Huyen T. T. Tran, Duc V. Nguyen, Duong D. Nguyen, Nam Pham Ngoc and Truong Cong Thang (IEEE INFOCOM WKSHPS • April 2019)"
 ---
+
+
+
+Index
 
 <!-- TOC -->
 * [논문 리뷰를 시작하며](#--)
@@ -154,7 +159,7 @@ HAS에서는 비디오가 먼저 상이한 품질 수준의 여러 버전으로 
   * 세그먼트 품질 값의 평균 및 stalling duration의 평균 등의 일부 통계치를 선형 함수와 같은 분석 함수에 넣어 모델링하는 분석 모델 기반의 방식임.  
   **=> 품질 변화와 stalling 현상이 미치는 영향을 모두 고려하는 연구가 부족함.**
 
-    
+
 #### Motivation
 
 * 고급 머신러닝 접근법을 제안한 연구들
@@ -228,6 +233,7 @@ Q = w_r * h_T + b_r
 
 여기서 w_r과 b_r도 학습되어야 하는 매개변수이다.  
 
+---
 
 #### Notes
 
@@ -266,6 +272,7 @@ Q = w_r * h_T + b_r
 
 ### B. Segment Features
 
+---
 
 #### Notes
 
@@ -290,6 +297,7 @@ Q = w_r * h_T + b_r
 
 #### 4) Evaluation Metircs
 
+---
 
 ##### Notes
 
@@ -298,6 +306,7 @@ Q = w_r * h_T + b_r
 
 ### B. Roles of Segment Features
 
+---
 
 #### Notes
 
@@ -307,6 +316,7 @@ Q = w_r * h_T + b_r
 
 ### C. Comparison with Existing Approaches
 
+---
 
 #### Notes
 
@@ -315,6 +325,8 @@ Q = w_r * h_T + b_r
 
 ## Conclusion
 
+
+---
 
 ### Notes
 

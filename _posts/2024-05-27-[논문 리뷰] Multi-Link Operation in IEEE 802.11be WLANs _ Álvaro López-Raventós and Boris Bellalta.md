@@ -1,6 +1,7 @@
 ---
-title: "Multi-Link Operation in IEEE 802.11be WLANs - Álvaro López-Raventós and Boris Bellalta"
+title: "Multi-Link Operation in IEEE 802.11be WLANs"
 published: True
+excerpt: "Álvaro López-Raventós and Boris Bellalta (IEEE Wireless Communications • August 2022)"
 ---
 
 <!-- TOC -->
