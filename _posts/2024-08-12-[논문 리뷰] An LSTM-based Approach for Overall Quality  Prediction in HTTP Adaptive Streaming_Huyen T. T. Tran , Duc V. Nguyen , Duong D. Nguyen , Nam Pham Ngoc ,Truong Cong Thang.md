@@ -348,6 +348,6 @@ Q = w_r * h_T + b_r
 >
 > ![yu signature](https://github.com/HoonC-corgi/Convolution_Filter_Application/assets/118245330/37c81d9e-cfb8-4aee-8497-ff1071b2458b)
 >
-> **Phone** | [010 - 6685 - 1140](tel:010-6685-1140)  
-> **Mail** | [tgh7544@naver.com](mailto:tgh7544@naver.com)  
-> **LinkTree** | [https://linktr.ee/HoonC_corgi](https://linktr.ee/HoonC_corgi)
+> **Phone** [010 - 6685 - 1140](tel:010-6685-1140)  
+> **Mail** [tgh7544@naver.com](mailto:tgh7544@naver.com)  
+> **LinkTree** [https://linktr.ee/HoonC_corgi](https://linktr.ee/HoonC_corgi)
