@@ -1,35 +1,36 @@
----
 published: True
 ---
 
-# **[논문 리뷰] Multi-Link Operation in IEEE 802.11be WLANs**
+# **Multi-Link Operation in IEEE 802.11be WLANs**
+
+
 ##  Álvaro López-Raventós and Boris Bellalta
 
 -----
 
 <!-- TOC -->
-* [**[논문 리뷰] Multi-Link Operation in IEEE 802.11be WLANs**](#논문-리뷰-multi-link-operation-in-ieee-80211be-wlans)
-  * [Álvaro López-Raventós and Boris Bellalta](#álvaro-lópez-raventós-and-boris-bellalta)
-  * [논문 리뷰를 시작하며](#논문-리뷰를-시작하며)
-  * [한글 번역 및 코멘트](#한글-번역-및-코멘트)
+* [**Multi-Link Operation in IEEE 802.11be WLANs**](#multi-link-operation-in-ieee-80211be-wlans)
+  * [Álvaro López-Raventós and Boris Bellalta](#lvaro-lpez-ravents-and-boris-bellalta)
+  * [논문 리뷰를 시작하며](#--)
+  * [한글 번역 및 코멘트](#---)
     * [Abstract](#abstract)
       * [Notes](#notes)
     * [Introduction](#introduction)
-      * [Notes](#notes-1)
+      * [Notes](#notes)
     * [Multi-Link Operation](#multi-link-operation)
       * [Architecture](#architecture)
-        * [Notes](#notes-2)
+        * [Notes](#notes)
       * [Transmission Modes](#transmission-modes)
-        * [Notes](#notes-3)
+        * [Notes](#notes)
       * [Management](#management)
-        * [Notes](#notes-4)
+        * [Notes](#notes)
       * [Power Save](#power-save)
-        * [Notes](#notes-5)
+        * [Notes](#notes)
     * [Traffic Management](#traffic-management)
-      * [Notes](#notes-6)
+      * [Notes](#notes)
     * [Performance Evaluation](#performance-evaluation)
     * [Open Issues and Challenges](#open-issues-and-challenges)
-      * [Notes](#notes-7)
+      * [Notes](#notes)
 <!-- TOC -->
 
 ---
