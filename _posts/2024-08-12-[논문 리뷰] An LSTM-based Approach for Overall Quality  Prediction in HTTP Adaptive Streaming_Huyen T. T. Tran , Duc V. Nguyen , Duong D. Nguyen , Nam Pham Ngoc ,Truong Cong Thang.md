@@ -1,5 +1,4 @@
 ---
-title: 11
 published: True
 ---
 
