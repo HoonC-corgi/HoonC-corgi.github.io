@@ -441,9 +441,6 @@ SLCI, MCAA, MLSA는 특정 인터페이스의 부하를 막기 위해 모든 TID
 
 ### Performance Evaluation
 
-![Avg. throughput losses for video and data flows. Black dashed line corresponds to the 5 percent losses threshold.
-](https://github.com/HoonC-corgi/rpgSimulatorDesign/assets/118245330/53ee092b-5645-4cd1-ab97-3dadcaeec69d)
-
 그림에서 볼 수 있듯 VDS 정책은 평가된 전체 시나리오의 50%에 대해서는 Video flows, Data flows에서 평균 throughput losses를 5% 미만의 값을 보였으나, 
 최악의 경우 거의 40%에 육박하는 평균 손실을 보여 MSLA 정책보다 낮은 성능을 보였다. 이는 VDS 정책의 중요한 단점을 보여준다. 
 VDS의 트래픽 분리는 인접 BSS가 겹치거나 트래픽 시나리오가 높은 조건에서 심각한 성능 문제를 겪을 수 있지만, SLCI 및 MCAA 정책은 활성 링크 간의 트래픽 부하 균형을 맞출 수 있기에 
