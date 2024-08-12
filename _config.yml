@@ -7,7 +7,7 @@ excerpt_separator: "\n\n"
 incremental: false
 
 # Build settings
-gems:
+plugins:
   - jemoji
   - jekyll-paginate
 
