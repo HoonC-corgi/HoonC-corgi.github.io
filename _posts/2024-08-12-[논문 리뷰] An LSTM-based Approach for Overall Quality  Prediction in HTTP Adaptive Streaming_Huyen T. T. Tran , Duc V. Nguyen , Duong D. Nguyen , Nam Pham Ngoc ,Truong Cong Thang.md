@@ -1,49 +1,39 @@
 ---
 title: "An LSTM-based Approach for Overall Quality Prediction in HTTP Adaptive Streaming - Huyen T. T. Tran, Duc V. Nguyen, Duong D. Nguyen, Nam Pham Ngoc and Truong Cong Thang"
 published: True
-categories: [논문 리뷰]
 ---
 
-# **An LSTM-based Approach for Overall Quality Prediction in HTTP Adaptive Streaming**
-
-
-## Huyen T. T. Tran, Duc V. Nguyen, Duong D. Nguyen, Nam Pham Ngoc and Truong Cong Thang
-
------
-
 <!-- TOC -->
-* [**An LSTM-based Approach for Overall Quality Prediction in HTTP Adaptive Streaming**](#an-lstm-based-approach-for-overall-quality-prediction-in-http-adaptive-streaming)
-  * [Huyen T. T. Tran, Duc V. Nguyen, Duong D. Nguyen, Nam Pham Ngoc and Truong Cong Thang](#huyen-t-t-tran-duc-v-nguyen-duong-d-nguyen-nam-pham-ngoc-and-truong-cong-thang)
-  * [논문 리뷰를 시작하며](#--)
-  * [한글 번역 및 코멘트](#---)
-    * [Abstract](#abstract)
+* [논문 리뷰를 시작하며](#--)
+* [한글 번역 및 코멘트](#---)
+  * [Abstract](#abstract)
+    * [Notes](#notes)
+  * [Introduction](#introduction)
+    * [Notes](#notes)
+      * [Motivation](#motivation)
+  * [Proposed Approach](#proposed-approach)
+    * [A. Architecture](#a-architecture)
       * [Notes](#notes)
-    * [Introduction](#introduction)
+    * [B. Segment Features](#b-segment-features)
       * [Notes](#notes)
-        * [Motivation](#motivation)
-    * [Proposed Approach](#proposed-approach)
-      * [A. Architecture](#a-architecture)
+  * [Evaluation](#evaluation)
+    * [A. Experiment Settings](#a-experiment-settings)
+      * [1) Dataset](#1--dataset)
+      * [2) Training Parameters](#2--training-parameters)
+      * [3) Input Features](#3--input-features)
+      * [4) Evaluation Metircs](#4--evaluation-metircs)
         * [Notes](#notes)
-      * [B. Segment Features](#b-segment-features)
-        * [Notes](#notes)
-    * [Evaluation](#evaluation)
-      * [A. Experiment Settings](#a-experiment-settings)
-        * [1) Dataset](#1--dataset)
-        * [2) Training Parameters](#2--training-parameters)
-        * [3) Input Features](#3--input-features)
-        * [4) Evaluation Metircs](#4--evaluation-metircs)
-          * [Notes](#notes)
-      * [B. Roles of Segment Features](#b-roles-of-segment-features)
-        * [Notes](#notes)
-      * [C. Comparison with Existing Approaches](#c-comparison-with-existing-approaches)
-        * [Notes](#notes)
-    * [Conclusion](#conclusion)
+    * [B. Roles of Segment Features](#b-roles-of-segment-features)
       * [Notes](#notes)
+    * [C. Comparison with Existing Approaches](#c-comparison-with-existing-approaches)
+      * [Notes](#notes)
+  * [Conclusion](#conclusion)
+    * [Notes](#notes)
 <!-- TOC -->
 
 ---
 
-## 논문 리뷰를 시작하며
+# 논문 리뷰를 시작하며
 
  연구실에서 진행하는 논문 세미나를 위한 논문 지정을 위해 여러 논문의 Abstract를 훑어 보던 시기에 교수님과의 면담에서 하나의 논문을 읽더라도 
 제대로 읽어 보고 이해할 필요가 있다는 조언에 따라 훑어 보았던 여러 논문 중 가장 관심이 갔던 논문을 처음부터 읽어 보았다.  
@@ -54,8 +44,8 @@ categories: [논문 리뷰]
 **[An LSTM-based Approach for Overall Quality Prediction in HTTP Adaptive Streaming](https://ieeexplore.ieee.org/abstract/document/8845041)** - Huyen T. T. Tran, Duc V. Nguyen, Duong D. Nguyen, Nam Pham Ngoc and Truong Cong Thang (IEEE INFOCOM WKSHPS • April 2019)
 
 ---
-## 한글 번역 및 코멘트
-### Abstract
+# 한글 번역 및 코멘트
+## Abstract
 
 **HAS(HTTP Adaptive Streaming)** 은 최근의 멀티미디어 전송을 위한 일반적인 솔루션이다. 
 
@@ -76,7 +66,7 @@ categories: [논문 리뷰]
 또한 본 방식은 기존의 네 가지 접근 방식을 능가하는 것으로 나타났다.
 
 ---
-#### Notes
+### Notes
 
 * **HAS(HTTP Adaptive Streaming)**
   * 비디오 컨텐츠를 상이한 품질을 가지는(상이한 비트레이트로 인코딩된) 여러 개의 작은 세그먼트로 분할함.  
@@ -97,7 +87,7 @@ categories: [논문 리뷰]
 
 
 ---
-### Introduction
+## Introduction
 
 HAS는 현재 멀티미디어 전송을 위한 비용에 효율적인 수단이 되었다.  
 
@@ -155,7 +145,7 @@ HAS에서는 비디오가 먼저 상이한 품질 수준의 여러 버전으로 
 
 
 ---
-#### Notes
+### Notes
 
 * HAS는 여러 품질을 가지는 버전으로 인코딩되며, 각 버전은 다시 짧은 세그먼트 시퀀스로 나누어 짐. 이후 네트워크 상태에 따라 적절한 버전의 세그먼트를 선택함.  
   * 이렇게 대역폭의 변동으로 인해 선택된 세그먼트 버전은 스트리밍 세션 동안 크게 변화할 수 있으며, 이는 품질 변화를 야기할 수 있음.
@@ -165,7 +155,7 @@ HAS에서는 비디오가 먼저 상이한 품질 수준의 여러 버전으로 
   **=> 품질 변화와 stalling 현상이 미치는 영향을 모두 고려하는 연구가 부족함.**
 
     
-##### Motivation
+#### Motivation
 
 * 고급 머신러닝 접근법을 제안한 연구들
   * random neural network를 사용한 연구
@@ -192,11 +182,11 @@ HAS에서는 비디오가 먼저 상이한 품질 수준의 여러 버전으로 
 
 
 -----
-### Proposed Approach
+## Proposed Approach
 
 이 섹션에서는 먼저 제안된 접근 방식의 아키텍처를 제시한다. 이후 다음 네 가지 세그먼트 기능에 대해 자세히 설명한다.
 
-#### A. Architecture
+### A. Architecture
 그림 1은 제안된 접근법의 아키텍처를 보여준다. 특히, 각 스트리밍 세션은 일련의 세그먼트로 간주된다. 각 세그먼트는 일련의 특징들로 구성된다. 
 이러한 특징들은 LSTM 네트워크에 입력으로 제공된다.  
 
@@ -239,7 +229,7 @@ Q = w_r * h_T + b_r
 여기서 w_r과 b_r도 학습되어야 하는 매개변수이다.  
 
 
-##### Notes
+#### Notes
 
 * 제안된 접근법의 구조와 동작
   * 스트리밍 세션의 세그먼트화  
@@ -274,59 +264,59 @@ Q = w_r * h_T + b_r
 
 ---
 
-#### B. Segment Features
-
-
-##### Notes
-
-
-
----
-
-### Evaluation
-
-
-#### A. Experiment Settings
-
-
-##### 1) Dataset
-
-
-##### 2) Training Parameters
-
-
-##### 3) Input Features
-
-
-##### 4) Evaluation Metircs
-
-
-###### Notes
-
----
-
-
-#### B. Roles of Segment Features
-
-
-##### Notes
-
-
----
-
-
-#### C. Comparison with Existing Approaches
-
-
-##### Notes
-
-
----
-
-### Conclusion
+### B. Segment Features
 
 
 #### Notes
+
+
+
+---
+
+## Evaluation
+
+
+### A. Experiment Settings
+
+
+#### 1) Dataset
+
+
+#### 2) Training Parameters
+
+
+#### 3) Input Features
+
+
+#### 4) Evaluation Metircs
+
+
+##### Notes
+
+---
+
+
+### B. Roles of Segment Features
+
+
+#### Notes
+
+
+---
+
+
+### C. Comparison with Existing Approaches
+
+
+#### Notes
+
+
+---
+
+## Conclusion
+
+
+### Notes
 
 
 ---
@@ -335,7 +325,7 @@ Q = w_r * h_T + b_r
 
 ---
 
-> #### Profile
+> ### Profile
 >
 >
 > ***Seong Hun KIM***

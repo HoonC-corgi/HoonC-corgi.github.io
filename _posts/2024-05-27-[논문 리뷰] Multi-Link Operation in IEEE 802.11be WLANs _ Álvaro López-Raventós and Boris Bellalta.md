@@ -1,42 +1,34 @@
 ---
+title: "Multi-Link Operation in IEEE 802.11be WLANs - Álvaro López-Raventós and Boris Bellalta"
 published: True
 ---
 
-# **Multi-Link Operation in IEEE 802.11be WLANs**
-
-
-##  Álvaro López-Raventós and Boris Bellalta
-
------
-
 <!-- TOC -->
-* [**Multi-Link Operation in IEEE 802.11be WLANs**](#multi-link-operation-in-ieee-80211be-wlans)
-  * [Álvaro López-Raventós and Boris Bellalta](#lvaro-lpez-ravents-and-boris-bellalta)
-  * [논문 리뷰를 시작하며](#--)
-  * [한글 번역 및 코멘트](#---)
-    * [Abstract](#abstract)
+* [논문 리뷰를 시작하며](#--)
+* [한글 번역 및 코멘트](#---)
+  * [Abstract](#abstract)
+    * [Notes](#notes)
+  * [Introduction](#introduction)
+    * [Notes](#notes)
+  * [Multi-Link Operation](#multi-link-operation)
+    * [Architecture](#architecture)
       * [Notes](#notes)
-    * [Introduction](#introduction)
+    * [Transmission Modes](#transmission-modes)
       * [Notes](#notes)
-    * [Multi-Link Operation](#multi-link-operation)
-      * [Architecture](#architecture)
-        * [Notes](#notes)
-      * [Transmission Modes](#transmission-modes)
-        * [Notes](#notes)
-      * [Management](#management)
-        * [Notes](#notes)
-      * [Power Save](#power-save)
-        * [Notes](#notes)
-    * [Traffic Management](#traffic-management)
+    * [Management](#management)
       * [Notes](#notes)
-    * [Performance Evaluation](#performance-evaluation)
-    * [Open Issues and Challenges](#open-issues-and-challenges)
+    * [Power Save](#power-save)
       * [Notes](#notes)
+  * [Traffic Management](#traffic-management)
+    * [Notes](#notes)
+  * [Performance Evaluation](#performance-evaluation)
+  * [Open Issues and Challenges](#open-issues-and-challenges)
+    * [Notes](#notes)
 <!-- TOC -->
 
 ---
 
-## 논문 리뷰를 시작하며
+# 논문 리뷰를 시작하며
 
  연구실에서 진행하는 논문 세미나를 준비하는 과정에서 해당 내용들을 그냥 넘어가지 않고, 블로그에 남겨 놓는다면 추후에 내가 공부하면서 어려워 했던 부분이나,
  놓쳤던 부분을 다시 확인할 수 있을 것 같아 논문 리뷰 글도 블로그에 작성해 보기로 하였다.
@@ -46,8 +38,8 @@ published: True
 **Multi-Link Operation in IEEE 802.11be WLANs** - Álvaro López-Raventós and Boris Bellalta (IEEE Wireless Communications • August 2022)
 
 ---
-## 한글 번역 및 코멘트
-### Abstract
+# 한글 번역 및 코멘트
+## Abstract
 
 multi-link operation (MLO)은 IEEE 802.11 be Extremely High Throughput (EHT)의 개선안의 일부로 제안된 새로운 기능이다.
 
@@ -62,7 +54,7 @@ multi-link operation (MLO)은 IEEE 802.11 be Extremely High Throughput (EHT)의 
 결과는 high load, high dense, 그리고 복잡한 시나리오에서 MLO를 사용하여 차세대 WLAN의 성능을 높이기 위한 congestion aware load balancing 전략이 필수적임을 시사한다.
 
 ---
-#### Notes
+### Notes
 
 * MLO는 IEEE 802.11 be EHT의 개선안의 일부로 새롭게 제안된 특징임
 * MLO로 인해 노드는 여러 무선 인터페이스를 통해 동시에 데이터 송수신이 가능해짐.
@@ -77,7 +69,7 @@ multi-link operation (MLO)은 IEEE 802.11 be Extremely High Throughput (EHT)의 
 * 결과적으로 high load, high dense, complex 시나리오에서는 MLO를 사용하여 차세대 무선랜의 성능을 높이기 위한 **congestion aware load balancing** 전략이 필수적임.
 
 ---
-### Introduction
+## Introduction
 
 WiFi로 흔히 알려진 IEEE 802.11 standard는 낮은 복잡성과 비용 효율을 가지는 무선 연결을 제공하기 위한 솔루션으로 90년대 후반에 출시되었다.
 
@@ -114,7 +106,7 @@ IEEE 802.11be Extremely High Throughput (EHT)라고 불리는, 이 개정안은 
 * 우리는 다른 트래픽 요구사항에 따라 제시된 전략을 평가하여 link-dedicated 접근이 high dense와 high load 시나리오 모두에서 적합하지 않음을 보인다.
 
 ---
-#### Notes
+### Notes
 
 * MLO의 장점
   * worst-case latency의 대폭 감소
@@ -142,11 +134,11 @@ IEEE 802.11be Extremely High Throughput (EHT)라고 불리는, 이 개정안은 
   * link-dedicated 접근이 high dens와 high load 시나리오에서의 성능평가
 
 -----
-### Multi-Link Operation
+## Multi-Link Operation
 
 MLO의 기능과 관련하여 IEEE 802.11 개정에 포함될 가능성이 있는 다양하고 가장 관련성 높은 제안들을 살펴 본다.  
 
-#### Architecture
+### Architecture
 첫 번째 아키텍처 변화는 고전적인 AP, STAs를 MLD(Multi-Link capable Device)로 재정의 하는 데에 있다.  
 AP MLDs 또는 STA MLDs는 여러 무선 인터페이스가 있는 단일 장치를 나타낸다.  
 이와 가장 연관된 측면으로 MLDs 각 인터페이스의 독립적인 파라미터를 잃지 않은 채 고유한 MAC 인스턴스를 상위 계층에 제공한다는 사실이다.  
@@ -167,7 +159,7 @@ L-MAC 계층의 다른 기능들은 각각 송수신할 때 관리 및 제어 �
 
 하지만 이러한 아키텍처는 더 복잡한 설계를 수반한다. 트래픽에 대한 링크 할당에 대한 새로운 정책을 설계해야할 뿐만 아니라 여러 링크에서 채널 경쟁 및 패킷 전송이 수행되는 방식에 대한 low-level 측면을 재고하여야 한다.
 
-##### Notes
+#### Notes
 AP, STAs을 단일 장치에서 여러 인터 페이스를 통해 여러 채널에 데이터를 송수신할 수 있는 MLD(Multi-Link Devices)로 재정의  
 MLDs 각 인터페이스의 독립적인 파라미터를 잃지 않은 채 고유한 MAC 인스턴스를 상위 계층으로 전달하기 위해 MAC sub-layers의 기능에 따라 
 U-MAC, L-MAC 두 개의 서브 계층으로 나누기를 제안함.
@@ -195,7 +187,7 @@ MLO를 통해 여러 링크로 나누어 데이터를 송수신함. 구현 역�
 
 ---
 
-#### Transmission Modes
+### Transmission Modes
 be 태스크 그룹은 MLDs를 두 가지의 다른 transmission mode로 정의 했다.
 첫째, 비동기 tranmission mode는 MLD가 여러 링크에 비동기적으로 프레임을 전송할 수 있도록 한다. 
 본 모드에서는 각 인터페이스는 다른 인터페이스를 존중하는 독립적인 동작과 함께 자신의 고유한 channel access 파라미터를 유지한다. 
@@ -217,7 +209,7 @@ MPC 방식의 적용을 통해 노드가 경쟁에서 이기고 프레임을 전
 SPC 또는 MPC 방법을 사용하여 인터페이스가 해당 채널의 경쟁에서 이길 경우 PIFS 시간 동안 다른 인터페이스를 확인하여, 이들이 aggregation될 수 있는지 확인, TXOP aggregation를 수행한다. 
 마지막으로 MLD를 지원하는 AP는 언제든 transmission 모드를 변경(synchronous to asynchronous, and vice versa)할 수 있다.
 
-##### Notes
+#### Notes
 
 MLDs의 transmission mode를 두 가지로 정의
 - asynchronous transmission mode
@@ -245,7 +237,7 @@ SPC는 모든 데이터 전송이 하나의 주 채널을 통해 이루어 지�
 
 ---
 
-#### Management
+### Management
 
 The Multi-Link Element:  
 상이한 management frames에 포함된 정보 요소(IEs)를 통해 장치는 기능과 동작과 관련된 매개변수를 교환할 수 있다. 
@@ -287,7 +279,7 @@ TID는 서로 다른 트래픽 유형을 QoS 요구 사항에 따라 분류하�
 이러한 맥락에서 link management 기법은 클라이언트 steering을 수행하지 않고도 과도한 수준의 링크 혼잡을 방지하는 load balancing 메커니즘으로 수행될 수 있다. 실제로 이 기능은 로드 밸런싱 분야에서 새로운 연구 기회를 열어 준다.
 
 
-##### Notes
+#### Notes
 MLE(The Multi-Link Element):  
 MLE는 Management에 대한 공통 요소들로 설계 되어 있음. 이를 통해 상이한 management frames에 포함된 정보 요소(IEs)를 통해 장치는 기능과 동작과 관련된 매개변수를 교환할 수 있음. 
 이를 구현하기 위해 MLE는 control 필드 내에 각 작업을 특정 값으로 매핑하는 type sub-field를 도입함. 
@@ -329,7 +321,7 @@ be에서는 MLO의 도입으로 TID를 모든 링크에 매핑하여 임의의 �
 
 ---
 
-#### Power Save
+### Power Save
 오늘날 인터넷 연결은 주로 휴대용 장치를 통해 수행되기 때문에 전력 관련 소비 문제를 신중하게 고려해야 한다. 
 이러한 문제를 해결하기 위해 be 태스크 그룹은 TIM(Traffic Indication Map)과 TWT(Target Wake Time)의 사용을 채택하고 조정할 것을 제안하였다. 
 
@@ -357,7 +349,7 @@ TIM뿐만 아니라 TWT에서도 스테이션은 필요할 때 깨어있는 상�
 TWT의 채택이 다른 성능 영향을 미칠 수도 있으나 현재까지 이러한 문제와 관련된 작업은 없다. 
 
 
-##### Notes
+#### Notes
 오늘날의 인터넷 연결은 주로 휴대용 장치를 통해 수행되기에 전력 소비 문제가 중요함. 
 이를 해결하기 위해 be 태스크 그룹은 TIM(Traffic Indication Map)과 TWT(Target Wake Time)의 사용을 채택하고 조정할 것을 제안함. 
 
@@ -384,7 +376,7 @@ TIM과 같이 TWT에서도 스테이션은 필요할 때 깨어있는 상태에�
 
 ---
 
-### Traffic Management
+## Traffic Management
 여러 인터페이스를 가진 AP와 스테이션이 존재하기 때문에 트래픽 flow 할당은 MLO에서 어려운 부분이다. 
 이와 관련하여 802.11be U-MAC 구현은 특정 L-MAC에 버퍼링된 데이터를 배포하기 위해 트래픽 관리자에 의존해야 한다. 
 인터페이스를 효율적으로 사용하는 것은 네트워크 성능 측면에서 매우 중요한 역할을 할 것이기 때문이다. 
@@ -405,7 +397,7 @@ TID-to-link 매핑 전략의 적용에서 장점과 단점을 보여주기 위�
 이 정책을 VDS(Video and Data Separation)이라고 하며, 데이터 흐름은 2.4GHz 또는 5GHz 대역에 할당하고, 비디오 흐름은 6GHz 대역에 할당한다. 
 VDS는 여러 인터페이스에 데이터 흐름을 분산하지 않고 전체 트래픽을 단일 인터페이스(즉, 2.4GHz 또는 5GHz 대역 중 가장 빈 인터페이스)에 할당한다. 
 
-#### Notes
+### Notes
 MLO는 여러 인터페이스를 가진 AP와 스테이션이 존재하는 환경이기에 트래픽 flow의 할당이 어렵고 중요함.  
 802.11be에서는 이와 관련된 일련의 정책을 도입하였는데, MLSA(Multi Link Same Load to All Interface), 
 SLCI(Single Link Less Congestion Interface), 
@@ -441,7 +433,7 @@ SLCI, MCAA, MLSA는 특정 인터페이스의 부하를 막기 위해 모든 TID
 
 ---
 
-### Performance Evaluation
+## Performance Evaluation
 
 그림에서 볼 수 있듯 VDS 정책은 평가된 전체 시나리오의 50%에 대해서는 Video flows, Data flows에서 평균 throughput losses를 5% 미만의 값을 보였으나, 
 최악의 경우 거의 40%에 육박하는 평균 손실을 보여 MSLA 정책보다 낮은 성능을 보였다. 이는 VDS 정책의 중요한 단점을 보여준다. 
@@ -454,7 +446,7 @@ VDS의 트래픽 분리는 인접 BSS가 겹치거나 트래픽 시나리오가 
 
 ---
 
-### Open Issues and Challenges
+## Open Issues and Challenges
 MLO는 차세대 무선랜에서 구현될 유망한 기능을 나타내지만, 여러 인터페이스를 동시에 사용하면 새로운 과제에 직면하게 된다. 
 이러한 맥락에서 추가 연구가 필요한 몇 가지 미해결 문제를 지적한다. 
 
@@ -484,7 +476,7 @@ MLO는 여러 링크에서 TXOP aggregation을 수행하기 때문에 단일 링
 이 측면에서, 로드 밸런싱 전략은 미래의 트래픽과 네트워크 동향을 예측하기 위해 머신러닝 솔루션을 사용할 때 이점을 얻을 수 있다.  
 
 
-#### Notes
+### Notes
 MLO를 사용함에 따라 발생한 문제와 해결책, 미해결 문제  
 1. Non-STR and Legacy Blindness
 2. Spectrum Inefficiency
