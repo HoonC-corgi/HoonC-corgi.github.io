@@ -1,5 +1,7 @@
 ---
+title: "An LSTM-based Approach for Overall Quality Prediction in HTTP Adaptive Streaming - Huyen T. T. Tran, Duc V. Nguyen, Duong D. Nguyen, Nam Pham Ngoc and Truong Cong Thang"
 published: True
+categories: [논문 리뷰]
 ---
 
 # **An LSTM-based Approach for Overall Quality Prediction in HTTP Adaptive Streaming**
