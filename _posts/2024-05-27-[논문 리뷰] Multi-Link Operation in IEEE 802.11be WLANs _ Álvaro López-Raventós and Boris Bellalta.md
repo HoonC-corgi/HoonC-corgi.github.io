@@ -1,5 +1,5 @@
 ---
-title: "Multi-Link Operation in IEEE 802.11be WLANs"
+title: "[논문 리뷰] Multi-Link Operation in IEEE 802.11be WLANs"
 published: True
 excerpt: "Álvaro López-Raventós and Boris Bellalta (IEEE Wireless Communications • August 2022)"
 ---
@@ -514,7 +514,7 @@ MLO UL에서의 로드 밸런싱 전략은 다운 링크와 전혀 다른 접근
 
 ---
 
-> **시작했으면 끝은 봐야지!**
+> **성공적인 성과까지!**
 
 ---
 
