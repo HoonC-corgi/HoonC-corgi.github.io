@@ -329,3 +329,22 @@ Q = w_r * h_T + b_r
 
 
 ---
+
+> **시작했으면 끝은 봐야지!**
+
+---
+
+> #### Profile
+>
+>
+> ***Seong Hun KIM***
+>
+>
+> **Student**  
+> **Dept. of Computer Science Engineering | Yeungnam University, Repulic of Korea**
+>
+> ![yu signature](https://github.com/HoonC-corgi/Convolution_Filter_Application/assets/118245330/37c81d9e-cfb8-4aee-8497-ff1071b2458b)
+>
+> **Phone** | [010 - 6685 - 1140](tel:010-6685-1140)  
+> **Mail** | [tgh7544@naver.com](mailto:tgh7544@naver.com)  
+> **LinkTree** | [https://linktr.ee/HoonC_corgi](https://linktr.ee/HoonC_corgi)

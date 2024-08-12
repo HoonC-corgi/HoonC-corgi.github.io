@@ -518,4 +518,25 @@ MLO는 여러 링크에서 TXOP aggregation을 수행함에 따라 단일 링크
 
 
 **Load Balancing**:  
-MLO UL에서의 로드 밸런싱 전략은 다운 링크와 전혀 다른 접근 방식을 요구할 수 있기에 미래 트래픽과 네트워크 동향을 예측하는 머신러닝 솔루션과 함께 사용되도록 연구해야 함.
+MLO UL에서의 로드 밸런싱 전략은 다운 링크와 전혀 다른 접근 방식을 요구할 수 있기에 미래 트래픽과 네트워크 동향을 예측하는 머신러닝 솔루션과 함께 사용되도록 연구해야 함.  
+
+---
+
+> **시작했으면 끝은 봐야지!**
+
+---
+
+> #### Profile
+>
+>
+> ***Seong Hun KIM***
+>
+>
+> **Student**  
+> **Dept. of Computer Science Engineering | Yeungnam University, Repulic of Korea**
+>
+> ![yu signature](https://github.com/HoonC-corgi/Convolution_Filter_Application/assets/118245330/37c81d9e-cfb8-4aee-8497-ff1071b2458b)
+>
+> **Phone** | [010 - 6685 - 1140](tel:010-6685-1140)  
+> **Mail** | [tgh7544@naver.com](mailto:tgh7544@naver.com)  
+> **LinkTree** | [https://linktr.ee/HoonC_corgi](https://linktr.ee/HoonC_corgi)
