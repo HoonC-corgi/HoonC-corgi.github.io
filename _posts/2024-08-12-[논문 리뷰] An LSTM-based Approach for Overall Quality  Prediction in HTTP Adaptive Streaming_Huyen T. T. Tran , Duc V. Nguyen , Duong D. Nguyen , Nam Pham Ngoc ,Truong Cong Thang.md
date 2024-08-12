@@ -1,15 +1,16 @@
----
+
 published: True
 ---
 
-# **[논문 리뷰]  An LSTM-based Approach for Overall Quality Prediction in HTTP Adaptive Streaming**
+# **An LSTM-based Approach for Overall Quality Prediction in HTTP Adaptive Streaming**
+
+
 ## Huyen T. T. Tran, Duc V. Nguyen, Duong D. Nguyen, Nam Pham Ngoc and Truong Cong Thang
 
 -----
 
 <!-- TOC -->
-  * [published: True](#published--true)
-* [**[논문 리뷰]  An LSTM-based Approach for Overall Quality Prediction in HTTP Adaptive Streaming**](#---an-lstm-based-approach-for-overall-quality-prediction-in-http-adaptive-streaming)
+* [**An LSTM-based Approach for Overall Quality Prediction in HTTP Adaptive Streaming**](#an-lstm-based-approach-for-overall-quality-prediction-in-http-adaptive-streaming)
   * [Huyen T. T. Tran, Duc V. Nguyen, Duong D. Nguyen, Nam Pham Ngoc and Truong Cong Thang](#huyen-t-t-tran-duc-v-nguyen-duong-d-nguyen-nam-pham-ngoc-and-truong-cong-thang)
   * [논문 리뷰를 시작하며](#--)
   * [한글 번역 및 코멘트](#---)
