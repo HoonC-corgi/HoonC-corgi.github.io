@@ -518,7 +518,7 @@ MLO UL에서의 로드 밸런싱 전략은 다운 링크와 전혀 다른 접근
 
 ---
 
-> #### Profile
+> ### Profile
 >
 >
 > ***Seong Hun KIM***
@@ -529,6 +529,6 @@ MLO UL에서의 로드 밸런싱 전략은 다운 링크와 전혀 다른 접근
 >
 > ![yu signature](https://github.com/HoonC-corgi/Convolution_Filter_Application/assets/118245330/37c81d9e-cfb8-4aee-8497-ff1071b2458b)
 >
-> **Phone** | [010 - 6685 - 1140](tel:010-6685-1140)  
-> **Mail** | [tgh7544@naver.com](mailto:tgh7544@naver.com)  
-> **LinkTree** | [https://linktr.ee/HoonC_corgi](https://linktr.ee/HoonC_corgi)
+> **Phone** [010 - 6685 - 1140](tel:010-6685-1140)  
+> **Mail** [tgh7544@naver.com](mailto:tgh7544@naver.com)  
+> **LinkTree** [https://linktr.ee/HoonC_corgi](https://linktr.ee/HoonC_corgi)
