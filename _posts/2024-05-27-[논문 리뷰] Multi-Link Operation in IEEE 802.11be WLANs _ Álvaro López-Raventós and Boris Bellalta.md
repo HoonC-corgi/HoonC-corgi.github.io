@@ -36,7 +36,8 @@ excerpt: "Álvaro López-Raventós and Boris Bellalta (IEEE Wireless Communicati
  
 오늘의 논문은 아래와 같다.
 
-**Multi-Link Operation in IEEE 802.11be WLANs** - Álvaro López-Raventós and Boris Bellalta (IEEE Wireless Communications • August 2022)
+**Multi-Link Operation in IEEE 802.11be WLANs** - Álvaro López-Raventós and Boris Bellalta (IEEE Wireless Communications • August 2022)  
+> 본 게시글은 위 논문을 스스로 번역, 재정리한 내용을 포함합니다.
 
 ---
 # 한글 번역 및 코멘트

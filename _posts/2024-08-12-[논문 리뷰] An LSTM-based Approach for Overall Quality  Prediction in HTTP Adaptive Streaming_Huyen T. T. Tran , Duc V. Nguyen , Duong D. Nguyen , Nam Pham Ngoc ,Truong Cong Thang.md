@@ -46,7 +46,8 @@ Index
 아직 어떠한 주제로 접근해야 할 지, 내가 주로 어떤 분야로 연구를 할지 정하지는 못했지만, 가장 끌리는 것은 IEEE 802.11의 표준 연구, 비디오 스트리밍이며, 오늘의 논문은 스트리밍과 관련된 논문이다.  
 
 
-**[An LSTM-based Approach for Overall Quality Prediction in HTTP Adaptive Streaming](https://ieeexplore.ieee.org/abstract/document/8845041)** - Huyen T. T. Tran, Duc V. Nguyen, Duong D. Nguyen, Nam Pham Ngoc and Truong Cong Thang (IEEE INFOCOM WKSHPS • April 2019)
+**[An LSTM-based Approach for Overall Quality Prediction in HTTP Adaptive Streaming](https://ieeexplore.ieee.org/abstract/document/8845041)** - Huyen T. T. Tran, Duc V. Nguyen, Duong D. Nguyen, Nam Pham Ngoc and Truong Cong Thang (IEEE INFOCOM WKSHPS • April 2019)  
+> 본 게시글은 위 논문을 스스로 번역, 재정리한 내용을 포함합니다.
 
 ---
 # 한글 번역 및 코멘트
