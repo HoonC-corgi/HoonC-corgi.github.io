@@ -300,23 +300,45 @@ Q = w_r * h_T + b_r
 1) **Segment Quality**  
   Segment quality feature는 비디오 세그먼트의 가시적인 품질을 나타낸다.  
   본 연구에서는 bitrate(BR), Peak Signal-to-Noise Ratio(PSNT), segment-MOS(S-MOS) [15] - [17]
-  세 가지 메트릭 중 하나를 사용하여 quality feature를 나타낸다.
+  세 가지 메트릭 중 하나를 사용하여 quality feature를 나타낸다.  
 
-<br> <br>
 
 2) **Stalling Durations**  
   세그먼트의 stalling duration feature (이하 SD)는 이전 세그먼트의 재생이 끝난 후 해당 세그먼트의 재생이 시작될 때까지 사용자가 기다려야 하는 시간을 나타낸다.   
   만약 해당 세그먼트가 이전 세그먼트의 재생이 끝나기 전(즉, playback deadline 전에) 클라이언트에 도착하면 SD는 0으로 설정된다. 그렇지 않으면 stalling 현상이 발생하며 SD는 양수 값이 된다.  
 
-<br> <br>
 
 3) **Content Characteristics**
   세션의 전체 품질은 비디오 컨텐츠의 특성에 영향을 받을 수 있다는 것이 잘 알려져 있다. [18]  
-  [18]과 유사하게, 제안된 접근법에서는 컨텐츠 특성 특징의 두 가지 차원인 **spatial complexity**, **temporal complexity**를 고려한다.  
+  [18]과 유사하게, 제안된 접근법에서는 컨텐츠 특성 특징의 두 가지 차원인 **spatial complexity**, **temporal complexity**를 고려한다.   
+  세그먼트의 temporal complexity를 나타내기 위해, [18]에서 사용된 **Spatial Variance (SV)** 지표를 사용한다.  
+   <br>
+  이는 MPEG-7 엣지 히스토그램 descriptor를 기반으로 계산된다. 구체적으로, 각 프레임은 먼저 4x4 서브 블록으로 나누어지고, 
+  그런 다음 모든 서브 블록에 대해 5가지 엣지 유형 (수직, 수평, 45도, 135도, 비방향)의 히스토그램이 계산된다 [19].  
+   <br>
+  _S_ _{qp}는 프레임 q의 모든 서브 블록에 대한 엣지 유형 p의 평균 히스토그램 값을 나타낸다.  
+   <br>
+  마지막으로, SV 값은 각 프레임의 _S_ _{qp}을 모두 더한 후, 프레임 수 _Q_와 엣지 유형의 수 _P_의 수로 나누어 전체 세그먼트의 temporal complexity를 계산한다.  
+   <br>
+  세그먼트의 temporal complexity는 해당 세그먼트의 모션 벡터로부터 계산된 두 가지 지표, **모션 벡터 크기의 평균 (이하 MMM)**과 **표준 편차 (이하 SMM)**으로 표현된다.  
 
-<br> <br>
 
-4) **Padding**
+4) **Padding**  
+  실제로 스트리밍 세션은 보통 서로 다른 길이 (i.e., 세그먼트의 수)를 가지게 된다. 본 연구에서는 모든 세션이 동일한 길이를 가지도록 하기 위해 
+  **zero-padding**을 사용한다.  
+   <br>
+  특히, 각 세션의 시작 부분에 일부 세그먼트 (패딩된 세그먼트라 함)가 추가되어, 해당 세션의 길이가 가장 긴 세션의 길이와 같아지도록 한다.  
+   <br>
+  모든 패딩된 세그먼트의 경우, 세그먼트 quality, stalling duration, content characteristics로 구성된 특징 값이 0으로 설정된다.  
+  <br>
+  패딩된 세그먼트오 ㅏ실제 세그먼트를 구별하기 위해 불린 변수 PS를 PS(t) = 1: 패딩된 세그먼트으로 정의한다.  
+  <br>
+  그림 3은 스트리밍 세션에서 정규화된 세그먼트 feature 값의 예를 보인다.  
+  그림 3에서 볼 수 있듯, 세그먼트 quality 즉, BR 지표는 세션 동안 크게 변동한다.  
+  또한 아홉 번째 세그먼트에서 SD > 0인 Stalling event가 발생한 것을 볼 수 있다.  
+  content characteristics과 관련하여 spatial complexity에는 큰 변화가 없지만, temporal complexity가 급격히 변동한다.  
+  PS 값은 첫 네 개의 세그먼트가 패딩된 세그먼트이고, 나머지는 실제 세그먼트임을 나타낸다.
+
 
 ---
 
@@ -332,6 +354,7 @@ Q = w_r * h_T + b_r
 
 세 가지 메트릭 중 하나를 사용하여 quality feature를 사용한다는데, 시나리오에 따라 다르게 사용하는지 이어질 내용을 봐야할 것.  
 
+
 2) **Stalling Durations**  
   특정 세그먼트의 재생 시작까지 기다려야 하는 시간을 의미함. 즉, 이전 세그먼트가 끝난 후 새 세그먼트가 재생되기까지의 대기 시간을 의미함.  
   * Playback Deadline  
@@ -340,14 +363,66 @@ Q = w_r * h_T + b_r
     t-1 시점의 세그먼트의 재생이 끝난 후 t 시점의 세그먼트가 클라이언트에 도착할 때 **Stalling**이 발생하며, **Stalling Duration**은 
     양수가 됨. (Playback Deadline 전에 도착한 경우 0)  
 
+
 3) **Content Characteristics**  
   * Spatial Complexity  
     비디오 프레임 내에서 시각적 디테일이나 복잡한 장면의 정도를 나타냄. e.g., 많은 세부 정보와 복잡한 패턴이 포함된 장면은 Spatial Complexity가 높음.  
     Spatial Complexity가 높으면, 비디오 인코딩에 더 많은 데이터가 필요하며, 스트리밍 품질에 영향을 미칠 수 있음. 낮은 BR과 함께일 때 품질 저하가 더 큼.  
-  * Temporal Complexity  
-    비디오에서 시간에 따라 변화하는 움직임이나 전환의 정도를 나타냄. e.g., 빠르게 움직이는 객체나 트랜지션이 잦은 비디오는 Temporal Complexity가 높음.  
-    Temporal Complexity가 높으면, 비디오 인코딩 시 더 많은 BR을 요구하며, 네트워크 대역폭 요구 사항이 증가할 수 있어 Stalling event, 품질 저하를 발생시킬 수 있음.  
+    <br>
+    * Spatial Variance (SV)  
+      비디오 프레임에서 시각적 복잡도를 나타내는 지표로, MPEG-7 표준의 엣지 히스토그램 descriptor를 활용하여 계산됨.
+    * 계산 과정
+      1) 프레임 분할  
+         비디오 프레임을 4x4 서브 블록으로 나눔. 프레임을 작은 블록으로 분해하여 세부적으로 분석하기 위함.
+      2) 엣지 히스토그램 계산  
+         각 서브 블록에 대하여 수직, 수평, 45도, 136도, 비방향 (e.g., 랜덤 패턴, 텍스처, etc.) 5가지 엣지 유형의 히스토그램을 계산함.  
+         엣지 히스토그램은 해당 방향으로 얼마나 많은 에지가 존재하는지를 측정함.
+      3) 평균 히스토그램 값 _S_ _{qp}  
+         각 프레임 q에서 모든 서브 블록에 대해 엣지 유형 p의 평균 히스토그램 값을 계산함.
+      4) 각 프레임의 _S_ _{qp}을 모두 더한 후, 프레임 수 _Q_와 엣지 유형의 수 _P_의 수로 나누어 전체 세그먼트의 temporal complexity를 계산함.  
+         **SV = 1/(_Q_ * _P_) * (각 프레임 별 _S_ _{qp} 총합)**
+    * SV 값의 사용  
+      계산된 평균 히스토그램 값을 바탕으로, 세그먼트의 공간적 복잡도를 나타내는 최종 SV 값이 도출됨.  
+      이는 비디오 세그먼트의 **temporal complexity**를 정량적으로 평가하는 데 사용됨.
 
+
+  * Temporal Complexity  
+  비디오에서 시간에 따라 변화하는 움직임이나 전환의 정도를 나타냄. e.g., 빠르게 움직이는 객체나 트랜지션이 잦은 비디오는 Temporal Complexity가 높음.  
+  Temporal Complexity가 높으면, 비디오 인코딩 시 더 많은 BR을 요구하며, 네트워크 대역폭 요구 사항이 증가할 수 있어 Stalling event, 품질 저하를 발생시킬 수 있음.  
+  <br>
+    * 모션 벡터
+      연속된 두 프레임 사이에서 픽셀이 어떻게 이동했는지를 나타내는 벡터로, 비디오에서 temporal complexity를 측정하기 위해 사용됨.  
+      * 지표  
+        * MMM (Mean Magnitude of Motion vectors)  
+          모션 벡터 크기의 평균으로, 모션 벡터의 크기가 클수록 프레임 간 움직이 큼을 의미함.
+        * SMM (Standard Deviation of Motion vectors)  
+          모션 벡터 크기의 표준 편차로, 표준 편차가 클수록 프레임 간 변동성이 큼을 의미함.  
+
+
+4) Padding  
+  스트리밍 세션마다 길이 즉, 세션의 세그먼트 수가 다를 수 있음. 따라서 가장 긴 세션에 맞추어 패딩이 필요하며, 0으로 채우는 **Zero-padding**을 사용함.  
+  이때, 패딩된 세그먼트의 특징 값은 모두 0으로 설정됨.
+
+
+그림 3 분석  
+* Segment Quality (i.e., BR)
+  세션 동안 큰 변화가 있음을 확인할 수 있음. 스트리밍 도중 네트워크 상태에 따라 bitrate가 달라진 것으로 보임.
+
+
+* Stalling Duration (SD)  
+  9번째 세그먼트에서 SD가 0이 아닌 값이 된 것을 보아, 아홉 번째 세그먼트가 playback deadline을 초과하여 클라이언트에 도착함으로 인해 재생이 일시적으로 중단되었을 것임을 알 수 있음.  
+
+
+* Content Characteristic
+  * Spatial Complexity (SV)  
+    세션 동안 SV가 크게 변동하지 않고 일정 수준으로 유지되는 것으로 보아, 시각적인 요소나 패턴이 일정하게 나타날 것으로 예상할 수 있음.  
+  * Temporal Complexity (MMM, SMM)
+    그래프에서 MMM과 SMM이 급격히 변동하는 것으로 보아, 비디오 내에 움직임 변화가 크거나, 트랜지션이 잦게 발생하고 있음을 예상할 수 있음.  
+
+
+* Padded Segment (PS)  
+  * PS 값이 1인 첫 네 개의 세그먼트는 패딩된 세그먼트이며, 나머지 세그먼트는 실제 비디오 데이터와 feature를 포함하는 세그먼트일 것임. 따라서 네 번째 세그먼트까지는 그래프 값이 나타나지 않음.  
+    
 
 
 ---
