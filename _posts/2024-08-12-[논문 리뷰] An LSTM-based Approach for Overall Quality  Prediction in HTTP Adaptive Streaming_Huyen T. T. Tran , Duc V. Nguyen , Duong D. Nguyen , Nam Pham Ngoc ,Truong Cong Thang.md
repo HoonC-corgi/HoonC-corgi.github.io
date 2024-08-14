@@ -482,11 +482,11 @@ Adam 알고리즘의 파라미터는 다음과 같이 설정되었다.
 
 #### 3) Input Features
 
-제안된 접근 방식에서 세그먼트 features의 역할을 조사하기 위해 네 가지의 input features의 경우를 고려한다.  
-첫 번재 경우 (Full)는 각 세그먼트가 섹션 _II-B_에 설명된 모든 네 가지 feature으로 표현된다.  
-나머지 세 가지 경우에서는 네 가지 features 중 세 가지만 사용된다.  
-구체적으로, 두 번째 경우 (_w/oCC_)에서는 content characteristics feature이 입력에서 제외된다.  
-세 번째 경우 (_w/oSQ_)에서는 세그먼트 quality feature이 고려되지 않는다. 마지막 경우 (_w/oSD_)에서는 stalling duration feature이 제안된 접근 방식의 입력으로 사용되지 않는다.  
+제안된 접근 방식에서 세그먼트 features의 역할을 조사하기 위해 네 가지의 input features의 케이스를 고려한다.  
+첫 번재 케이스 (Full)는 각 세그먼트가 섹션 _II-B_에 설명된 모든 네 가지 feature으로 표현된다.  
+나머지 세 가지 케이스에서는 네 가지 features 중 세 가지만 사용된다.  
+구체적으로, 두 번째 케이스 (_w/oCC_)에서는 content characteristics feature이 입력에서 제외된다.  
+세 번째 케이스 (_w/oSQ_)에서는 세그먼트 quality feature이 고려되지 않는다. 마지막 케이스 (_w/oSD_)에서는 stalling duration feature이 제안된 접근 방식의 입력으로 사용되지 않는다.  
 
 
 #### 4) Evaluation Metircs
@@ -560,7 +560,7 @@ _높은 PCC와 낮은 RMSE는 더 나은 예측 성능을 의미한다._
   과적합에 대한 방안은 없는 건가?
 
 3) Input Features  
-   1) 첫 번째 경우 (Full)  
+   1) 첫 번째 케이스 (Full)  
       모든 input features를 사용함.
       * Segment Quality
       * Stalling Duration
@@ -569,20 +569,20 @@ _높은 PCC와 낮은 RMSE는 더 나은 예측 성능을 의미한다._
    
       전체 특징 사용을 통해 모델이 최상의 성능을 발휘하는지 평가하기 위한 것으로 보임.  
      <br>
-   2) 두 번째 경우 (_w/oCC_)
+   2) 두 번째 케이스 (_w/oCC_)
       Content Characteristics feature만을 제외한 나머지 세 가지 특징을 사용함.  
 
-      Content Characteristics가 제외된 경우를 평가하여, 그 중요성을 알아보기 위한 것으로 보임.  
+      Content Characteristics가 제외된 케이스를 평가하여, 그 중요성을 알아보기 위한 것으로 보임.  
    <br>
-   3) 세 번째 경우 ((_w/oSQ_)
+   3) 세 번째 케이스 (_w/oSQ_)
       Segment Quality feature만을 제외한 나머지 세 가지 특징을 사용함.
 
-      Segment Quality가 제외된 경우를 평가하여, 그 중요성을 알아보기 위한 것으로 보임.  
+      Segment Quality가 제외된 케이스를 평가하여, 그 중요성을 알아보기 위한 것으로 보임.  
       <br>
-   4) 네 번째 경우 ((_w/oSD_)
+   4) 네 번째 케이스 (_w/oSD_)
       Stalling Duration feature만을 제외한 나머지 세 가지 특징을 사용함.
 
-      Stalling Duration을 제외된 경우를 평가하여, 그 중요성을 알아보기 위한 것으로 보임.  
+      Stalling Duration을 제외된 케이스를 평가하여, 그 중요성을 알아보기 위한 것으로 보임.  
       <br>
 
 
@@ -606,9 +606,55 @@ _높은 PCC와 낮은 RMSE는 더 나은 예측 성능을 의미한다._
 
 ### B. Roles of Segment Features
 
+본 하위 섹션에서는 제아노딘 접근 방식에서 세그먼트 features가 어떤 역할을 하는지 조사한다.  
+이를 위해서 섹션 _III-A3_ 에서 제시된 네 가지의 input features의 케이스에 대해 제안된 접근 방식의 예측 성능을 평가한다.  
+
+그림 4는 제안된 접근 방식의 Full 및 _w/oCC_ 케이스에서, epochs _e_ 가 500에서 5000까지 500 단위로 증가할 때의 PCC와 RMSE 값을 보인다.  
+참고로, 세그먼트 quality feature는 섹션 _II-B1_ 에서 언급된 세 가지 metric 중 하나로 표현된다.  
+그림 4에서 알 수 있듯이, 특정 세그먼트 quality metric을 기준으로 했을 때 훈련 세트는 항상 테스트 세트보다 더 높은 PCC와 더 낮은 RMSE 값을 가진다.  
+
+훈련 세트와 테스트 세트 모두에서 epochs _e_ 가 처음 증가할 때 PCC값은 빠르게 증가하고 RMSE 값은 급격히 감소한다.  
+에포크가 더 증가하면, PCC와 RMSE 값이 안정화된다.  
+안정 상태에 도달하는 속도는 S-MOS 및 PSNR metrics가 BR metric보다 훨씬 빠르다.  
+구체적으로, Full 및 _w/oCC_ 케이스 모두에서 최적의 epochs _e_ 는 S-MOS, PSNR metrics는 1500, BR metric은 2500이다.  
+
+BR 및 PSNR metrics의 경우, Full 케이스가 _w/oCC_ 케이스보다 훨씬 높은 예측 성능을 달성한다.  
+S-MOS 지표의 경우, Full 케이스와 w/oCC 케이스는 유사한 예측 성능을 보인다.  
+이 결과는 세그먼튼 quality metric으로 S-MOS가 사용될 때, content characteristics feature를 추가로 사용하는 것이 제안된 접근 방식의 개선에 큰 도움이 되지 않음을 시사한다.  
+반면, BR 및 PSNR 지표의 경우, content characteristics feature를 포함하는 것이 필요하다.  
+즉, content characteristics feature의 역할은 세그먼트 quality feature를 나타내는 데 사용된 지표에 따라 달라진다.  
+
+
+
 ---
 
 #### Notes
+
+훈련 세트가 테스트 세트에 비해 더 좋은 성능을 보이는 것은 일반적으로 발생할 수 있으나, 과적합으로 인한 것일 수도 있음.  
+
+훈련 세트와 테스트 세트 모두에서 epochs 축에 따라 급격한 곡선을 그리며 성능이 향상됨. PCC: 예측과 실제값의 상관 관계를 높임. RMSE: 예측 오류 감소.    
+
+이후 안정화 단계에 접어들 게 되며, 안정화 속도는 S-MOS, PNSR metrics가 BR metric보다 빠름.  
+
+즉, BR metric을 사용할 때에 더 많은 학습을 필요로 함.  
+
+metric을 비교할 때 안정화되는 데까지 S-MOS, PSNR이 1000 에포크 가량 앞서므로, BR metric보다 효율적일 수 있을 것으로 보임.  
+
+
+* 세그먼트 quality metric에 따른 Content Characteristics Feature의 기여 차이
+  * BR 및 PSNR
+    Full 케이스가 _w/oCC_ 케이스보다 훨씬 더 높은 예측 성능을 보임.  
+    즉, BR 및 PSNR을 세그먼트 quality metric으로 사용할 때, content characteristics feature가 모델의 예측 성능에 크게 기여함을 의미함.  
+    <br>
+  * S-MOS  
+    Full 케이스와 _w/oCC_ 케이스 간의 예측 성능이 거의 동일하게 나타남.  
+    즉, S-MOS를 세그먼트 quality metirc으로 사용할 때, content characteristics feature가 성능 개선에 큰 영향을 미치지 못함을 의미함.  
+    <br>
+  * Content Characteristics Feature의 기여
+    * BR 및 PSNR  
+      BR 및 PSNR은 비디오의 complexity와 품질에 따라 변화하므로, content characteristics feature 사용을 통해 성능이 개선될 수 있음으로 예상됨.  
+    * S-MOS  
+      S-MOS는 피험자의 주관적 평가에 기반한 품질 지표이기에, 이미 시각적 품질로 평가되었으므로, content characteristics feature의 사용이 큰 효과를 낼 수 없는 것으로 예상됨.  
 
 
 ---
