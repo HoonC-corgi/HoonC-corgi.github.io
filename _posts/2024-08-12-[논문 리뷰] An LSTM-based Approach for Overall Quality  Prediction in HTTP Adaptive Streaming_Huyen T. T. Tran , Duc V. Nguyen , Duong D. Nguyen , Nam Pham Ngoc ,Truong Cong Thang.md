@@ -77,10 +77,10 @@ Index
 * **HAS (HTTP Adaptive Streaming)**
   * 비디오 컨텐츠를 상이한 품질을 가지는 (상이한 비트레이트로 인코딩된) 여러 개의 작은 세그먼트로 분할함.  
   * 각 세그먼트들은 HTTP 서버에 저장되며, 클라이언트는 네트워크 상태에 따라 적절한 품질의 세그먼트를 선택하여 다운로드함.  
-  * 이떄 각 세그먼트의 URL, 길이, 비트레이트, 해상도 등의 정보들은 매니페스트 파일에 저장되며, 이를 읽고 네트워크 상태에 맞게 선택하여 독립적으로 다운하는 방식임.  
+  * 이때 각 세그먼트의 URL, 길이, 비트레이트, 해상도 등의 정보들은 매니페스트 파일에 저장되며, 이를 읽고 네트워크 상태에 맞게 선택하여 독립적으로 다운하는 방식임.  
   * 이외에도 고정된 품질의 비디오 컨텐츠를 HTTP 서버에서 다운로드 하는 PD(Progressive Download), UDP를 사용하고 실시간 스트리밍에 적합한
     RTSP (Real-Time Streaming Protocol)와 RTP (Real-time Transport Protocol)가 있음.
-* HAS에서 각 스트리밍 세션에서의 비디오 품질 변화가 발생, 이를 평가할 방법이 중요한 포인트임.  
+* HAS에서는 각 스트리밍 세션 내에서도 비디오 품질 변화가 발생, 따라서 세션의 전반적인 품질을 평가할 방법이 중요한 포인트임.  
 * LSTM을 활용하여 세그먼트 간의 시간적인 관계를 발견하고자 함.  
   * LSTM의 입력: segment quality, stalling durations, content characteristics padding 
   * LSTM의 출력: 스트리밍 세션의 전반적인 품질
