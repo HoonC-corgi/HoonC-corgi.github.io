@@ -383,7 +383,7 @@ Q = w_r * h_T + b_r
          **SV = 1/(_Q_ * _P_) * (각 프레임 별 _S_ _{qp} 총합)**
     * SV 값의 사용  
       계산된 평균 히스토그램 값을 바탕으로, 세그먼트의 공간적 복잡도를 나타내는 최종 SV 값이 도출됨.  
-      이는 비디오 세그먼트의 **temporal complexity**를 정량적으로 평가하는 데 사용됨.
+      이는 비디오 세그먼트의 **spatial complexity**를 정량적으로 평가하는 데 사용됨.
 
 
   * Temporal Complexity  
