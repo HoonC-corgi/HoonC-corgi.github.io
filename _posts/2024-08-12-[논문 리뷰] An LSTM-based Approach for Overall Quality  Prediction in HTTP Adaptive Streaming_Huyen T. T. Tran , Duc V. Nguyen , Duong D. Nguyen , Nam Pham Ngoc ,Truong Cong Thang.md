@@ -82,7 +82,7 @@ Index
     RTSP (Real-Time Streaming Protocol)와 RTP (Real-time Transport Protocol)가 있음.
 * HAS에서는 각 스트리밍 세션 내에서도 비디오 품질 변동이 발생, 따라서 세션의 전반적인 품질을 평가할 방법이 중요한 포인트임.  
 * LSTM을 활용하여 세그먼트 간의 시간적인 관계를 발견하고자 함.  
-  * LSTM의 입력: segment quality, stalling durations, content characteristics padding 
+  * LSTM의 입력: segment quality, stalling durations, content characteristics, padding 
   * LSTM의 출력: 스트리밍 세션의 전반적인 품질
 
 
