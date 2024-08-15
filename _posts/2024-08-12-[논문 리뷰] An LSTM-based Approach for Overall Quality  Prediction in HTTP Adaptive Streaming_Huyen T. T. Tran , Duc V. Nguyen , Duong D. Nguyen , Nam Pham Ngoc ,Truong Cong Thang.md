@@ -299,7 +299,7 @@ Q = w_r * h_T + b_r
 
 1) **Segment Quality**  
   Segment quality feature는 비디오 세그먼트의 가시적인 품질을 나타낸다.  
-  본 연구에서는 bitrate(BR), Peak Signal-to-Noise Ratio(PSNT), segment-MOS(S-MOS) [15] - [17]
+  본 연구에서는 bitrate(BR), Peak Signal-to-Noise Ratio(PSNT), Segment-MOS(S-MOS) [15] - [17]
   세 가지 메트릭 중 하나를 사용하여 quality feature를 나타낸다.  
 
 
