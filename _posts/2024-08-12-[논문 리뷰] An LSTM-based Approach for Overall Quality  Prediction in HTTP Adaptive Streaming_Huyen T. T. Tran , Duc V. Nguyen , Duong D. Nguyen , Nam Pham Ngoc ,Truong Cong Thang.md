@@ -311,7 +311,7 @@ Q = w_r * h_T + b_r
 3) **Content Characteristics**
   세션의 전체 품질은 비디오 컨텐츠의 특성에 영향을 받을 수 있다는 것이 잘 알려져 있다. [18]  
   [18]과 유사하게, 제안된 접근법에서는 컨텐츠 특성 특징의 두 가지 차원인 **spatial complexity**, **temporal complexity**를 고려한다.   
-  세그먼트의 temporal complexity를 나타내기 위해, [18]에서 사용된 **Spatial Variance (SV)** 지표를 사용한다.  
+  세그먼트의 spatial complexity를 나타내기 위해, [18]에서 사용된 **Spatial Variance (SV)** 지표를 사용한다.  
    <br>
   이는 MPEG-7 엣지 히스토그램 descriptor를 기반으로 계산된다. 구체적으로, 각 프레임은 먼저 4x4 서브 블록으로 나누어지고, 
   그런 다음 모든 서브 블록에 대해 5가지 엣지 유형 (수직, 수평, 45도, 135도, 비방향)의 히스토그램이 계산된다 [19].  
