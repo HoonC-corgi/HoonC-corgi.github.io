@@ -331,7 +331,7 @@ Q = w_r * h_T + b_r
    <br>
   모든 패딩된 세그먼트의 경우, 세그먼트 quality, stalling duration, content characteristics로 구성된 특징 값이 0으로 설정된다.  
   <br>
-  패딩된 세그먼트오 ㅏ실제 세그먼트를 구별하기 위해 불린 변수 PS를 PS(t) = 1: 패딩된 세그먼트으로 정의한다.  
+  패딩된 세그먼트와 실제 세그먼트를 구별하기 위해 불린 변수 PS를 PS(t) = 1: 패딩된 세그먼트으로 정의한다.  
   <br>
   Figure 3은 스트리밍 세션에서 정규화된 세그먼트 feature 값의 예를 보인다.  
   Figure 3에서 볼 수 있듯, 세그먼트 quality 즉, BR 지표는 세션 동안 크게 변동한다.  
