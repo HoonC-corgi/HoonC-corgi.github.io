@@ -61,7 +61,7 @@ Index
 
 본 논문에서는 HAS에서 전반적인 품질 예측을 위한 머신러닝 접근법을 제안한다.
 
-제안된 접근법에서 각 세그먼트는 _segment quality, stalling durations, content characteristics과 padding_ 의 네 가지 기능으로 표현된다.
+제안된 접근법에서 각 세그먼트는 _segment quality, stalling durations, content characteristics과 padding_ 의 네 가지 features로 표현된다.
 
 특징들은 LSTM 네트워크에 입력되어 세그먼트 간의 시간적인 관계를 발견할 수 있도록 한다.
 
