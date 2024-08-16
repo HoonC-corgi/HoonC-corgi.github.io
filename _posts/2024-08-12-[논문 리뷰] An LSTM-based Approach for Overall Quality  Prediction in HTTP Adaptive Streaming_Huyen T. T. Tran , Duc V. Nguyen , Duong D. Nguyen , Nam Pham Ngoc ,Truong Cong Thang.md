@@ -618,7 +618,7 @@ Figure 4에서 알 수 있듯이, 특정 세그먼트 quality metric을 기준�
 
 BR 및 PSNR metrics의 경우, Full 케이스가 _w/oCC_ 케이스보다 훨씬 높은 예측 성능을 달성한다.  
 S-MOS 지표의 경우, Full 케이스와 w/oCC 케이스는 유사한 예측 성능을 보인다.  
-이 결과는 세그먼튼 quality metric으로 S-MOS가 사용될 때, content characteristics feature를 추가로 사용하는 것이 제안된 접근법의 개선에 큰 도움이 되지 않음을 시사한다.  
+이 결과는 세그먼트 quality metric으로 S-MOS가 사용될 때, content characteristics feature를 추가로 사용하는 것이 제안된 접근법의 개선에 큰 도움이 되지 않음을 시사한다.  
 반면, BR 및 PSNR 지표의 경우, content characteristics feature를 포함하는 것이 필요하다.  
 즉, content characteristics feature의 역할은 세그먼트 quality feature를 나타내는 데 사용된 지표에 따라 달라진다.  
 
