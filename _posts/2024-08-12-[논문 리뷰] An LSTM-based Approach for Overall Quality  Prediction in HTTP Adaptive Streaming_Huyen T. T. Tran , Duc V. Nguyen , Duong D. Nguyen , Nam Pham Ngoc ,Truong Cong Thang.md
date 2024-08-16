@@ -579,7 +579,7 @@ _높은 PCC와 낮은 RMSE는 더 나은 예측 성능을 의미한다._
 
       Segment Quality가 제외된 케이스를 평가하여, 그 중요성을 알아보기 위한 것으로 보임.  
       <br>
-   .네 번째 케이스 (_w/oSD_)
+   4. 네 번째 케이스 (_w/oSD_)
       Stalling Duration feature만을 제외한 나머지 세 가지 특징을 사용함.
 
       Stalling Duration을 제외된 케이스를 평가하여, 그 중요성을 알아보기 위한 것으로 보임.  
