@@ -640,7 +640,7 @@ Table **I**는 epochs가 5000일 때 Full, _w/oSQ_, _w/oSD_ 세 가지 경우에
 
 훈련 세트와 테스트 세트 모두에서 epochs 축에 따라 급격한 곡선을 그리며 성능이 향상됨. PCC: 예측과 실제값의 상관 관계를 높임. RMSE: 예측 오류 감소.    
 
-이후 안정화 단계에 접어들 게 되며, 안정화 속도는 S-MOS, PNSR metrics가 BR metric보다 빠름.  
+이후 안정화 단계에 접어들 게 되며, 안정화 속도는 S-MOS, PSNR metrics가 BR metric보다 빠름.  
 
 즉, BR metric을 사용할 때에 더 많은 학습을 필요로 함.  
 
