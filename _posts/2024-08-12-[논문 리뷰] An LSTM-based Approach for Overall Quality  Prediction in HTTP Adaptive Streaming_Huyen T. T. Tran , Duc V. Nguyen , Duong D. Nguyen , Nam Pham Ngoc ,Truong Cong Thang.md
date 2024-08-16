@@ -561,11 +561,11 @@ _높은 PCC와 낮은 RMSE는 더 나은 예측 성능을 의미한다._
 
 3) Input Features
    1. 첫 번째 케이스 (Full)  
-      모든 input features를 사용함.
-      * Segment Quality
-      * Stalling Duration
-      * Content Characteristics
-      * 기타 연구에서 사용된 feature  
+      모든 input features를 사용함.  
+      * Segment Quality  
+      * Stalling Duration  
+      * Content Characteristics  
+      * 기타 연구에서 사용된 feature    
    
       전체 특징 사용을 통해 모델이 최상의 성능을 발휘하는지 평가하기 위한 것으로 보임.  
    <br>
