@@ -485,7 +485,7 @@ Adam 알고리즘의 파라미터는 다음과 같이 설정되었다.
 제안된 접근법에서 세그먼트 features의 역할을 조사하기 위해 네 가지의 input features의 케이스를 고려한다.  
 첫 번째 케이스 (Full)는 각 세그먼트가 섹션 _II-B_ 에 설명된 모든 네 가지 feature으로 표현된다.  
 나머지 세 가지 케이스에서는 네 가지 feature 중 세 가지만 사용된다.  
-구체적으로, 두 번째 케이스 ( _w/oCC_ )에서는 content characteristics feature이 입력에서 제외된다.  
+구체적으로, 두 번째 케이스 ( _w/oCC_ )에서는 content characteristics feature가 입력에서 제외된다.  
 세 번째 케이스 (_w/oSQ_)에서는 세그먼트 quality feature이 고려되지 않는다. 마지막 케이스 (_w/oSD_)에서는 stalling duration feature이 제안된 접근법의 입력으로 사용되지 않는다.  
 
 
