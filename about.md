@@ -1,17 +1,17 @@
 ---
 layout: page
-title: About me
+title: "About me"
 permalink: /about/
 ---
-## About me
 
----
-#### Korean
-안녕하십니까, 저는 대한민국 경상북도 경산시에 있는 영남대학교 컴퓨터공학과 학부생 과정 중인 HoonC-corgi, 김성훈입니다.  
+![Profile](./assets/images/author.jpg)
+
+# Korean
+안녕하세요, 영남대학교 컴퓨터공학과 학부생 과정 중인 HoonC-corgi, 김성훈입니다.  
 학부생으로서 여러 Computer Science에 대하여 공부하고 있으며, 그 중에서 열정을 가지고 공부한 분야는 컴퓨터 비전, 데이터 통신, 네트워크입니다.  
 학부 졸업 후 IEEE 802.11, full duplex WLAN, Video Streaming 등 WLAN 분야로 연구원이 되기를 꿈꾸고 있습니다.
 
-#### Engilsh
+# Engilsh
 
 Hello, I am Kim Seong Hoon a.k.a HoonC-corgi, an undergraduate student in the Department of Computer Science Engineering at Yeungnam University, Gyeongsan, Republic of Korea.  
 As an undergraduate student, I study various computer science, and among them, I studied computer vision, data communication, and network with passion.  
@@ -68,7 +68,7 @@ After graduating from an undergraduate school, I dream of becoming a researcher 
 
 ---
 
-## Profile
+# Profile
 
 ---
 >  
@@ -81,6 +81,6 @@ After graduating from an undergraduate school, I dream of becoming a researcher 
 >  
 > ![yu signature](https://github.com/HoonC-corgi/Convolution_Filter_Application/assets/118245330/37c81d9e-cfb8-4aee-8497-ff1071b2458b)  
 >  
-> **Phone** | [010 - 6685 - 1140](tel:010-6685-1140)    
-> **Mail** | [tgh7544@naver.com](mailto:tgh7544@naver.com)    
-> **LinkTree** | [https://linktr.ee/HoonC_corgi](https://linktr.ee/HoonC_corgi)  
+> **Phone** [010 - 6685 - 1140](tel:010-6685-1140)    
+> **Mail** [tgh7544@naver.com](mailto:tgh7544@naver.com)    
+> **LinkTree** [https://linktr.ee/HoonC_corgi](https://linktr.ee/HoonC_corgi)  

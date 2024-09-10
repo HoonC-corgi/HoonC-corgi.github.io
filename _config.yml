@@ -1,3 +1,4 @@
+# _config.yml
 # Conversion
 markdown: kramdown
 highlighter: rouge
@@ -6,7 +7,7 @@ excerpt_separator: "\n\n"
 incremental: false
 
 # Build settings
-gems:
+plugins:
   - jemoji
   - jekyll-paginate
 
@@ -29,14 +30,14 @@ author_image: "/assets/images/author.jpg"
 
 paginate:	5
 
-url: "HoonC-corgi.github.io" # the base hostname & protocol for your site
+url: "https://hoonc-corgi.github.io" # the base hostname & protocol for your site
 baseurl: ""
 
 future: true
 #fill in disqus shortname to use disqus
 #disqus: disqus-shortname
 
-#google_analytics: UA-XXXXX-X
+google_analytics: G-2B3BYZ9KQ7
 
 # social icons and sharing options
 social:
