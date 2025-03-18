@@ -30,9 +30,9 @@ HAS는 현대 멀티미디어 전송을 위한 가장 인기 있는 솔루션이
 
 본 논문에서는 스트리밍 세션에서의 각 세그먼트가 set of features로 표현되는 overall quality 예측을 위한 머신 러닝 접근 방식을 제안한다.
 
-feature set의 두 가지 옵션을 조사하였다. 첫 번째 옵션에서 우리는 **segment quality, content characteristics, stalling duration, padding**, 네 가지 feature를 사용하였다.
+feature set의 두 가지 옵션을 조사하였다. 첫 번째 옵션에서 우리는 **Segment Quality, Content Characteristics, Stalling Duration, Padding**, 네 가지 feature를 사용하였다.
 
-두 번째 옵션에서는 **bitstream-level parameters, stalling duration, padding**, 세 가지 feature를 사용하였다.
+두 번째 옵션에서는 **Bitstream-level parameters, Stalling Duration, Padding**, 세 가지 feature를 사용하였다.
 
 각 옵션에서 features를 stalling event와 품질 변동의 발생 간의 temporal relations를 탐구할 수 있는 LSTM 네트워크에 입력하였다.
 
@@ -50,9 +50,9 @@ overall quality는 선형 회귀 모듈을 사용하는 LSTM 네트워크의 출
 입출력
 * input
   * option 1  
-    Segment quality content characteristics, stalling duration, padding
+    Segment Quality Content Characteristics, Stalling Duration, Padding
   * option 2  
-    bitstream-level parameters, stalling duration, padding
+    bitstream-level parameters, Stalling Duration, Padding
 * output
   * overall quality
 
@@ -86,7 +86,7 @@ HAS에서 핵심 과제는 품질 변화와 stalling event의 영향을 고려�
 
 이러한 접근법들에서 품질 변동의 영향은 품질 변동의 횟수, 평균, 최소값, 세그먼트 품질 값의 히스토그램과 같은 일부 통계값을 사용하여 모델링된다.
 
-stalling event의 영향에 대해서는 stalling event의 수와 합, stalling duration 히스토그램이 일반적으로 사용된다.
+stalling event의 영향에 대해서는 stalling event의 수와 합, Stalling Duration 히스토그램이 일반적으로 사용된다.
 
 전반적인 품질을 예측하기 위해 이러한 통계값들은 선형 함수와 로그 함수같은 분석 함수를 사용하여 풀링된다.
 
@@ -107,13 +107,13 @@ stalling event의 영향에 대해서는 stalling event의 수와 합, stalling 
 
 전반적인 품질 예측을 위한 최초의 고급 머신 러닝 접근법은 [15]의 연구이며, 랜덤 신경망을 사용하였다.
 
-해당 접근법의 입력으로는 모든 비디오 프레임의 모든 매크로 블록에 대한 양자화 파라미터 값의 평균, stalling event 수, stalling duration의 평균 및 최대값으로 구성된다.
+해당 접근법의 입력으로는 모든 비디오 프레임의 모든 매크로 블록에 대한 양자화 파라미터 값의 평균, stalling event 수, Stalling Duration의 평균 및 최대값으로 구성된다.
 
 해당 접근법은 16초 길이의 118개의 스트리밍 세션이 포함된 데이터셋으로 측정하였다.
 
 [16]의 저자는 전반적인 품질을 예측하기 위해 회귀 모델을 사용하는 다른 고급 머신 러닝 접근법을 제안하였다.
 
-그들의 접근법에서 각 세션은 세그먼트 품질 값의 평균, 세그먼트 품질이 감소한 시간, 마지막 impairment 이벤트가 발생한 이후의 시간(ie., stalling event 또는 세그먼트 품질 저하), stalling duration 총합, stalling event 수 5개의 통계값으로 특정된다.
+그들의 접근법에서 각 세션은 세그먼트 품질 값의 평균, 세그먼트 품질이 감소한 시간, 마지막 impairment 이벤트가 발생한 이후의 시간(ie., stalling event 또는 세그먼트 품질 저하), Stalling Duration 총합, stalling event 수 5개의 통계값으로 특정된다.
 
 이를 위해 선형 휘귀, SVR, 앙상블 기법 세 가지의 회귀 모델이 고려된다.
 
@@ -131,7 +131,7 @@ ITU-T P.1203.3 표준의 최신 단계에서는 스트리밍 세션의 전반적
 
 그러나 이러한 통계값들은 impairment 이벤트들 간의 시간적 관계를 놓치기에 스트리밍 세션에서 발생할 수 있는 impairment 이벤트를 충분히 반영하지 못한다.
 
-가령, 같은 횟수의 stalling event, stalling durations의 합, 연속적인 stalling event들이 간헐적으로 발생하는 그것들과 비교하여 야기할 수 있는 부정적인 영향을 반영하지 못한다.
+가령, 같은 횟수의 stalling event, Stalling Durations의 합, 연속적인 stalling event들이 간헐적으로 발생하는 그것들과 비교하여 야기할 수 있는 부정적인 영향을 반영하지 못한다.
 
 그러므로, 스트리밍 세션의 impairment 이벤트 간의 시간적 관계를 충분히 추출할 수 있는 접근법을 개발하는 것이 필수적이며, 이것이 본 연구의 핵심 동기이다.
 
@@ -150,7 +150,7 @@ ITU-T P.1203.3 표준의 최신 단계에서는 스트리밍 세션의 전반적
 * 둘 째, 기본 LSTM, 고급 LSTM 두 개의 상이한 LSTM 네트워크를 조사한다.  
   특히, 제안된 접근법의 성능에 패딩이 미치는 영향을 시험한다.  
   또한 입력 features를 complex와 simple 두 가지의 옵션으로 제안하고 분석한다.  
-  complex 옵션은 세그먼트 품질, 컨텐츠 특성, stalling duration, 패딩으로 구성된다.
+  complex 옵션은 Segment Quality, Content Characteristics, Stalling Duration, Padding으로 구성된다.
 * 셋 째, 제안된 접근법은 세 가지의 데이터셋을 사용하여 평가되었다.  
   1) 60-76초 길이의 세션 515개, 그 중 332개는 실제 스트리밍 테스트베드에서 얻은 데이터셋  
   2) 1분 길이의 세션 120개로 구성된 데이터셋  
@@ -160,8 +160,8 @@ ITU-T P.1203.3 표준의 최신 단계에서는 스트리밍 세션의 전반적
 위 작업의 일부는 [25]에 제시되어 있다. 이전 연구와 비교할 때에, 본 연구는 새로운 점을 가진다.  
   1) 고급 LSTM을 사용하여 제안된 접근법의 성능을 향상 시켰다.    
   2) 효율적이고 효과적인 feature 셋의 새로운 옵션(simple option)을 제안하였다.    
-  3) Segment quality feature 표현에 사용되는 다섯 가지 추가 메트릭을 포함하였다.    
-  4) LSTM 입력에 스위칭 빈도 특징을 추가하는 것이 제안된 접근법의 성능을 향상시킬 수 있는지 조사한다.  
+  3) Segment Quality feature 표현에 사용되는 다섯 가지 추가 메트릭을 포함하였다.    
+  4) LSTM 입력에 스위칭 빈도 feature를 추가하는 것이 제안된 접근법의 성능을 향상시킬 수 있는지 조사한다.  
   5) 패딩 옵션과 히든 유닛 수를 포함하여 LSTM과 관련된 이슈에 대한 광범위한 평가를 수행하였다. 또한 LSTM과 단순한 회귀 모델인 SVR과 LSTM을 비교하였다.  
   6) [7], [12], [14]에서 제안된 세 개의 기존 접근법을 구현하였으며, 제안된 접근법과 비교하였다.  
   7) 제안된 접근법의 성능을 평가하기 위해 두 개의 데이터셋을 사용하였다.
@@ -191,7 +191,7 @@ Overall quality 평가 방법
   - ITU-T P.880
 * 기존 방법
   - 분석 모델 기반의 접근법으로, 품질 변동의 횟수, 평균, 세그먼트 품질 값의 히스토그램 등 일부 통계값을 사용하여 품질 변동의 영향을 모델링함.  
-    stalling event: stalling event의 수와 합, stalling duration 히스토그램 사용이 일반적임.  
+    stalling event: stalling event의 수와 합, Stalling Duration 히스토그램 사용이 일반적임.  
     Overall quality 예측을 위해 통계값들을 선형 함수, 로그 함수 등으로 풀링    
   - 고급 머신 러닝 접근법은 적음  
     공적으로 사용 가능한 데이터셋을 사용하나 아래 문제가 있음.
@@ -211,13 +211,13 @@ e.g., 동일한 횟수의 impairment 이벤트, 연속적인 이벤트 - 간헐�
     1) Overall quality를 예측하기 위해 LSTM을 사용하는 최초의 연구
     2) 기본, 고급 LSTM 두 개의 상이한 LSTM을 조사  
       패딩이 제안된 접근법에 미치는 영향을 조사  
-      입력 features를 complex(세그먼트 품질, 커넽ㄴ츠 특성, stalling duraion, 패딩), simple 두 가지 옵션으로 제안, 분석함.
+      입력 features를 complex(Segment Quality, Content Characteristics, stalling duraion, Padding), simple 두 가지 옵션으로 제안, 분석함.
     3) 세 가지 데이터셋을 사용하여 다양하게 평가
   - 이전 연구와의 차이
     - 고급 LSTM을 사용한 성능향상
     - 효율적이고 효과적인 simple option feature 셋 제안
-    - Segment quality feature 표현에 다섯 가지 메트릭 추가
-    - LSTM 입력에 스위칭 빈도 특징을 추가하는 것이 성능 향상에 효과적인지 조사
+    - Segment Quality feature 표현에 다섯 가지 메트릭 추가
+    - LSTM 입력에 스위칭 빈도 feature를 추가하는 것이 성능 향상에 효과적인지 조사
     - 패딩 옵션, 히든 유닛 수를 포함한 광범위한 평가, LSTM-SVR 비교
     - [7], [12], [14] 세 개의 기존 접근법 구현 및 비교
     - 제안된 접근법 성능 평가를 위해 두 개의 데이터셋 사용
@@ -259,33 +259,33 @@ adLSTM에서 어텐션 적용한 걸 보니, 막연하지만 바다나우 어텐
 
 본 섹션에서는 complex option과 simple option feature set 두 가지의 입력 옵션을 제안한다.
 
-각 옵션에서 features는 stalling duration, padding, quality variation 세 가지 그룹으로 구분할 수 있다.
+각 옵션에서 features는 Stalling Duration, Padding, quality variation 세 가지 그룹으로 구분할 수 있다.
 
-stalling duration과 padding의 features는 각 옵션에서 동일하다. stalling duration feature를 사용하는 것의 목적은 스트리밍 세션에서 발생하는 stalling event의 영향에 있다.
+Stalling Duration과 Padding의 features는 각 옵션에서 동일하다. Stalling Duration feature를 사용하는 것의 목적은 스트리밍 세션에서 발생하는 stalling event의 영향에 있다.
 
-padding feature는 LSTM 네트워크의 학습 과정에서 모든 세션이 같은 길이를 가질 수 있도록 한다.
+Padding feature는 LSTM 네트워크의 학습 과정에서 모든 세션이 같은 길이를 가질 수 있도록 한다.
 
 반면에 각 옵션에서 quality variation의 영향을 반영하기 위해서는 상이한 두 가지 feature sets을 고려하여야 한다.
 
-특히 complex option은 세그먼트 품질과 컨텐츠 특성의 두 가지 feature가 모두 포함되어 있으며, 이를 얻는 데에 많은 비용이 들 수 있다.
+특히 complex option은 Segment Quality와 Content Characteristics의 두 가지 feature가 모두 포함되어 있으며, 이를 얻는 데에 많은 비용이 들 수 있다.
 
-비트스트림 레벨 파라미터에 기반하는 simple option에서의 features는 이들을 쉽게 추출할 수 있다. 
+Bitstream-level parameter에 기반하는 simple option에서의 features는 이들을 쉽게 추출할 수 있다. 
 
 features에 대한 설명은 아래와 같다.
 
 **A. Complex Input Option**
 
-각 세그먼트는 여러 features로 표현된다. 첫 번째 옵션은 세그먼트 퀄리티, 컨텐츠 특성, stalling duration, padding 네 가지 feature로 구성된다.
+각 세그먼트는 여러 features로 표현된다. 첫 번째 옵션은 Segment Quality, Content Characteristics, Stalling Duration, Padding 네 가지 feature로 구성된다.
 
 1) Segment Quality  
   ![Metircs Used to Represent the Segment Quality Feature](https://github.com/user-attachments/assets/d5a26fb9-9177-417e-8d3a-8eb837eed199)
-  Segment quality feature는 다양한 quality 메트릭으로 표현될 수 있다. 본 연구에서는 S-MOS, Bitrate, PSNR, PSNR-HVS, PSNR-HVS-M, SSIM, MS-SSIM, VIF 8가지 메트릭을 고려하였다.  
+  Segment Quality feature는 다양한 quality 메트릭으로 표현될 수 있다. 본 연구에서는 S-MOS, Bitrate, PSNR, PSNR-HVS, PSNR-HVS-M, SSIM, MS-SSIM, VIF 8가지 메트릭을 고려하였다.  
   이 메트릭 중 S-MOS, PSNR-HVS, PSNR-HVS-M, SSIM, MS-SSIM, VIF 여섯 가지 메트릭만이 인간의 시각 시스템 특성을 고려한다.  
   일부 quality 메트릭은 측정하기 쉬운 반면, S-MOS는 이를 얻는 데에 시간이 매우 많이 든다.
 
 2) Content Characteristics  
   비디오의 품질이 컨텐츠 특성에 영향을 받는다는 것은 잘 알려져 있다.  
-  [35]와 유사하게, 제안된 접근법에서는 컨텐츠 특성은 spatial complexity, temporal complexity로 두 가지 차원을 모두 고려하였다.  
+  [35]와 유사하게, 제안된 접근법에서는 Content Characteristics은 spatial complexity, temporal complexity로 두 가지 차원을 모두 고려하였다.  
   각 세그먼트의 spatial complexity를 표현하기 위해 SV(Spatial Variance) 메트릭을 사용하였다. 이 메트릭은 MPEG-7 edge histogram algorithm으로부터 계산되었다.  
   특수적으로, 세그먼트의 각 프레임은 우선적으로 4x4의 서브 블록으로 나누어졌으며, 이후 각 블록에서 수직, 수평, 45도, 135도, non-direction 다섯 가지 엣지 유형의 히스토그램이 계산되었다.  
   각 세그먼트의 temporal complexity를 표현하기 위해 모션 벡터로부터 계산된 두 가지 메트릭이 사용되었다.  
@@ -294,7 +294,7 @@ features에 대한 설명은 아래와 같다.
   세 메트릭 모두 독립적이기에 모두 LSTM에 입력하였다.
 
 3) Stalling Duration  
-  세그먼트의 stalling duration feature는 사용자가 이전 세그먼트가 끝난 후 현재 세그먼트가 시작될 때까지 기다려야 하는 시간으로 표현된다.  
+  세그먼트의 Stalling Duration feature는 사용자가 이전 세그먼트가 끝난 후 현재 세그먼트가 시작될 때까지 기다려야 하는 시간으로 표현된다.  
   현재 세그먼트가 이전 세그먼트의 재생이 끝나기 전에 클라이언트에 도착하면 Stalling Duration은 0으로 설정된다.  
   반면에, stalling event가 발생하면, Stalling Duration은 양수 값이 된다. stalling event는 SD가 0보다 큰 세그먼트의 수이다.
 
@@ -302,7 +302,7 @@ features에 대한 설명은 아래와 같다.
   스트리밍 세션은 보통 서로 다른 길이를 가진다. 학습에 제로 패딩 기법을 적용하는 것은 세션이 같은 길이를 가지도록 한다.  
   padded segment라 하는 일부 세그먼트가 모든 세션의 시작에 추가되어 가장 긴 세션의 길이와 같은 길이를 가진다.  
   패딩된 세그먼트와 실제 세그먼트를 구분하기 위해, 1과 0으로 불린 변수 PS를 정의했다.  
-  모든 padded 세그먼트는 segment quality, 컨텐츠 특성, stalling duration과 같은 features값을 0으로 가진다.  
+  모든 padded 세그먼트는 Segment Quality, Content Characteristics, Stalling Duration과 같은 features값을 0으로 가진다.  
   제안된 접근법의 성능에 패딩이 미치는 영향을 조사하기 위해 네 가지 상이한 패딩 케이스에 대해 VI-B 섹션에서 평가하였다.  
   ![An example of a streaming session](https://github.com/user-attachments/assets/a9befd37-fe6c-405a-b24e-a3270b09113b)
   그림 6은 스트리밍 세션의 정규화된 feature 값과 해당 대역폭 추적을 나타낸다. 처음 14개 세그먼트가 패딩된 세그먼트(PS=1)임을 알 수 있다.  
@@ -312,14 +312,14 @@ features에 대한 설명은 아래와 같다.
 
 **B. Simple Input Option**
 
-실제로 세그먼트 품질과 컨텐츠 특성의 feature는 얻는 데에 시간이 많이 걸리고, 저장하는 데에 자원이 많이 소모되어 일반적으로 많은 비용이 든다.
+실제로 Segment Quality와 Content characteristics feature는 얻는 데에 시간이 많이 걸리고, 저장하는 데에 자원이 많이 소모되어 일반적으로 많은 비용이 든다.
 
 따라서 더 간단하고 실제로 직접 사용할 수 있는 또 다른 옵션인 Simple Input Option을 추가로 제안한다. 이 옵션은 아래의 features를 포함한다.
 * Bitstream-level parameters
 * Stalling duration
 * Padding  
 
-여기서 Stalling Duration과 Padding features는 complex option과 동일하다. 비트스트림 레벨 파라미터는 양자화 매개변수(QP), Bitrate, 해상도, frame-rate를 포함한다.
+여기서 Stalling Duration과 Padding features는 complex option과 동일하다. Bitstream-level parameter는 양자화 매개변수(QP), Bitrate, 해상도, frame-rate를 포함한다.
 
 QP는 세그먼트 내 모든 프레임의 모든 매크로 블록에 대한 양자화된 파라미터 값의 평균으로 계산된다. 나머지는 세그먼트의 Bitrate, 해상도, frame-rate이다.
 
@@ -445,34 +445,34 @@ PCC가 높을 수록, RMSE가 낮을 수록, SROCC가 높을 수록 예측 성�
 
 **A. Performance of the Complex Option I1**
 
-본 서브섹션에서는 complex option I1에서 features, 특히 컨텐츠 특성 및 가장 좋은 세그먼트 품질 측정 메트릭의 이점이 미치는 영향을 조사할 예정이다.
+본 서브섹션에서는 complex option I1에서 features, 특히 Content Characteristics 및 가장 좋은 Segment Quality 측정 메트릭의 이점이 미치는 영향을 조사할 예정이다.
 
 이를 위해 앞선 네 가지 입력 feature 케이스를 평가한다. 여기서는 adLSTM을 사용하고 에포크는 500~7000, 히든 유닛은 5로 설정한다.
 
 ![PCC values averaged over the 100 sets for the Full case using the diffrent quality metrics of the option I1 and the adLSTM network](https://github.com/user-attachments/assets/15a02c4a-dd2f-425c-93a7-ffe8fd8fbb86)
 
-그림 9는 여러 품질 메트릭을 사용하여 Full 케이스에서 100개의 테스트 세트에 대해 평균을 낸 PCC 값을 보인다. S-MOS가 일관되게 가장 높은 PCC 값을 나타내는 것을 볼 수 있다. 이는 S-MOS가 세그먼트 품질 특징을 나타내는 가장 좋은 지표임을 보인다.
+그림 9는 여러 품질 메트릭을 사용하여 Full 케이스에서 100개의 테스트 세트에 대해 평균을 낸 PCC 값을 보인다. S-MOS가 일관되게 가장 높은 PCC 값을 나타내는 것을 볼 수 있다. 이는 S-MOS가 Segment Quality feature를 나타내는 가장 좋은 지표임을 보인다.
 
 PSNR은 단순한 측정 항목임에도, PCC 값은 S-MOS보다 약간 낮다는 것이다. 특히 가장 높은 PCC 값을 보인 PSNR의 경우 0.942(epochs=4000), S-MOS의 경우 0.966(epochs=1500)이었다.
 
-또한 PSNR-variants 및 VIF에 해당하는 PCC 값도 S-MOS에 비해 약간 낮았다. 따라서 컨텐츠 특성이 포함된 경우 Segment quality feature를 표현하기 위해 S-MOS 대신 PSNR, PSNR-variant, VIF를 사용하여도 무방하다.
+또한 PSNR-variants 및 VIF에 해당하는 PCC 값도 S-MOS에 비해 약간 낮았다. 따라서 Content Characteristics이 포함된 경우 Segment Quality feature를 표현하기 위해 S-MOS 대신 PSNR, PSNR-variant, VIF를 사용하여도 무방하다.
 
 ![Best performance of the proposed approach using the adLSTM network for the Full and w/oCC cases of the option I1 over the test sets](https://github.com/user-attachments/assets/c6417e22-f64f-4bf0-8c6a-150d13de5259)
 
-그림 11은 서로 다른 Segment quality 메트릭을 사용할 때 테스트 세트에 대한 Full 케이스, w/oCC 케이스의 최고 성능을 비교한 것이다. 
+그림 11은 서로 다른 Segment Quality 메트릭을 사용할 때 테스트 세트에 대한 Full 케이스, w/oCC 케이스의 최고 성능을 비교한 것이다. 
 
 S-MOS를 제외한 모든 지표에서 Full 케이스가 w/oCC 케이스에 비해 훨씬 더 높은 성능을 보이는 것을 확인할 수 있다. 가장 큰 성능 차이는 PSNR과 VIF에서 보였다.
 
-한편, S-MOS를 사용할 경우에 Full 케이스와 w/oCC 케이스의 성능이 비슷한데, 이는 Segment quality feature를 표현하기 위해 S-MOS를 사용할 때에는 컨텐츠 특성 feature를 추가로 사용해도 큰 개선이 없음을 의미한다. 반면, BR, PSNR, PSNR-variant, SSIM, MS-SSIM, VIF 메트릭에서는 컨텐츠 특성을 고려하는 것이 유리하다.
+한편, S-MOS를 사용할 경우에 Full 케이스와 w/oCC 케이스의 성능이 비슷한데, 이는 Segment Quality feature를 표현하기 위해 S-MOS를 사용할 때에는 Content Characteristics feature를 추가로 사용해도 큰 개선이 없음을 의미한다. 반면, BR, PSNR, PSNR-variant, SSIM, MS-SSIM, VIF 메트릭에서는 Content Characteristics을 고려하는 것이 유리하다.
 
-PSNR, PSNR-HVS, PSNR-HVS-M 세 가지 메트릭 중 w/oCC 케이스와 비교한 Full 케이스에서의 이득은 PSNR에서 가장 크고 PSNR-HVS-M이 가장 작았다. 이는 인간의 시각 시스템을 추가로 고려하는 PSNR-variants가 기존 PSNR보다 컨텐츠 특성에 덜 의존한다는 것을 나타낸다. SSIM과 그 변형인 MS-SSIM에서도 비슷한 결론을 찾을 수 있었다.
+PSNR, PSNR-HVS, PSNR-HVS-M 세 가지 메트릭 중 w/oCC 케이스와 비교한 Full 케이스에서의 이득은 PSNR에서 가장 크고 PSNR-HVS-M이 가장 작았다. 이는 인간의 시각 시스템을 추가로 고려하는 PSNR-variants가 기존 PSNR보다 Content Characteristics에 덜 의존한다는 것을 나타낸다. SSIM과 그 변형인 MS-SSIM에서도 비슷한 결론을 찾을 수 있었다.
 
 
 ![Best Performance of the Proposed Approach for the Difference Input Cases of Full, w/oSD, w/oSQ, and exI1 Using S-MOS and the adLSTM Network for the Test Sets.png](https://github.com/user-attachments/assets/8272b2c7-5601-43a8-93c2-1bd958722a07)
 
 표 4는 Full, w/oSD, w/oSQ 및 exI1의 다양한 입력 케이스에 대한 제안된 접근법의 최고 성능을 보여준다.
 
-Stalling Duration feature와 Segment quality feature를 입력에서 제외하면 제안한 접근법의 성능이 크게 저하되는 것을 볼 수 있다.
+Stalling Duration feature와 Segment Quality feature를 입력에서 제외하면 제안한 접근법의 성능이 크게 저하되는 것을 볼 수 있다.
 
 특히 Stalling Duration feature를 고려하지 않은 케이스(w/oSD)에서는 PCC와 SROCC 값이 0.966에서 0.838, 0.965에서 0.820으로 떨어지는 반면 RMSE값은 0.248에서 0.518로 증가하는 것을 볼 수 있다. 이는 Stalling event가 세션의 Overall quality에 상당한 영향을 미친다는 것을 나타낸다.
 
@@ -506,23 +506,52 @@ Complex 및 조합 옵션에서는 Full 케이스와 S-MOS 품질 메트릭이 �
 
 simple 옵션이 높은 성능을 보이면서도 복잡성에 있어 유리하기에 simple 옵션 I2가 효율적이고 효과적이라 할 수 있다.
 
-또한 이는 비트스트림 수준의 파라미터가 세그먼트 품질과 컨텐츠 특성을 대체할 수 있음을 시사한다.
+또한 이는 Bitstream-level parameter가 Segment Quality와 Content Characteristics을 대체할 수 있음을 시사한다.
 
 
 입력 옵션에 대한 심층적인 이해를 위해 LSTM 대신 단순 회귀 모델인 SVR을 사용하여 비교를 수행하였다.
 
 결과는 표 5에서 확인할 수 있으며, 비슷한 결론을 도출할 수 있었다. 특히, complex 옵션 I1(Full case)와 조합 옵션의 성능이 비슷하고, 둘 다 simple 옵션 I2보다 약간의 높은 성능만을 보였다.
 
-또한 w/oSQ, w/oSD의 경우 Full 케이스에 비해 성능이 상당히 낮게 나타난 것에서 Segment quality와 Stalling Duration feature의 중요한 역할이 다시 한 번 확인할 수 있었다.
+또한 w/oSQ, w/oSD의 경우 Full 케이스에 비해 성능이 상당히 낮게 나타난 것에서 Segment Quality와 Stalling Duration feature의 중요한 역할이 다시 한 번 확인할 수 있었다.
 
 입력 옵션에 대한 자세한 이야기는 섹션 VIII에서 다룬다.
 
+---
+### Notes
 
 
+**A. Performance of the Complex Option I1**
+
+Full 케이스에서 100개의 테스트 세트에 대한 PCC 값 비교에서 S-MOS가 가장 좋은 결과를 보임으로, S-MOS가 Segment Quality feature를 가장 잘 나타내는 지표임
+
+PSNR은 단순하지만 S-MOS 다음으로 좋음.
+
+w/oCC가 아닌 Content Characteristics를 포함하는 경우에는 S-MOS 대신 PSNR, PSNR-variant, VIF를 사용해도 좋음.
+
+S-MOS를 제외한 모든 메트릭에서 Full이 w/oCC보다 좋은 성능을 보였음. PSNR, VIF에서 가장 크게 나타남.
+
+S-MOS를 사용하는 경우 Full과 w/oCC가 비슷한 성능을 보임. 즉, S-MOS에는 Content Characteristics를 반영하는 게 그닥 의미가 없음. 
+BR, PSNR, PSNR-variant, SSIM, MS-SSIM, VIF 메트릭 쓸 때는 반영하는 것이 좋음.
+
+인간의 시각 시스템을 고려하는 메트릭인 PSNR-variant, MS-SSIM이 그 원형보다 Content Characteristics에 덜 영향을 받음. "애초에 사람의 눈은 컨텐츠 특성을 고려하니까"
+
+w/oSD-Full 비교를 통해서 Stalling event가 Overall Quality에 미치는 영향이 큼을 알 수 있음.
+
+w/oSD-w/oSQ 비교를 통해서 Segment Quality가 Stalling Duration보다 더 중요함을 알 수 있음.
+
+스위칭 빈도 feature를 추가하여도 단순 발생 횟수 비교이기 때문에 스위칭의 폭을 반영하지 못해[37] 성능은 저하됨. 
+스위칭의 빈도가 Overall Quality에 미치는 영향은 미미하며, 이전 연구 [42]의 결과와도 일치함.
 
 
+**B. Comparison of Input Options**
 
+I1, I2, I1+I2 옵션 비교를 통해서 simple 옵션인 I2가 성능과 복잡성 측면에서 효율적임을 보였음. 
+**이는 비트스트림 레벨의 파라미터가 Segment Quality와 Content Characteristics를 대체할 수 있음을 의미함.**
 
+---
+
+## **VI. Analysis of LSTM networks**
 
 
 
