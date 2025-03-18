@@ -160,8 +160,8 @@ ITU-T P.1203.3 표준의 최신 단계에서는 스트리밍 세션의 전반적
 위 작업의 일부는 [25]에 제시되어 있다. 이전 연구와 비교할 때에, 본 연구는 새로운 점을 가진다.  
   1) 고급 LSTM을 사용하여 제안된 접근법의 성능을 향상 시켰다.    
   2) 효율적이고 효과적인 feature 셋의 새로운 옵션(simple option)을 제안하였다.    
-  3) 세그먼트 품질 feature 표현에 사용되는 다섯 가지 추가 메트릭을 포함하였다.    
-  4) LSTM 입력에 스위칭 주파수 특징을 추가하는 것이 제안된 접근법의 성능을 향상시킬 수 있는지 조사한다.  
+  3) Segment quality feature 표현에 사용되는 다섯 가지 추가 메트릭을 포함하였다.    
+  4) LSTM 입력에 스위칭 빈도 특징을 추가하는 것이 제안된 접근법의 성능을 향상시킬 수 있는지 조사한다.  
   5) 패딩 옵션과 히든 유닛 수를 포함하여 LSTM과 관련된 이슈에 대한 광범위한 평가를 수행하였다. 또한 LSTM과 단순한 회귀 모델인 SVR과 LSTM을 비교하였다.  
   6) [7], [12], [14]에서 제안된 세 개의 기존 접근법을 구현하였으며, 제안된 접근법과 비교하였다.  
   7) 제안된 접근법의 성능을 평가하기 위해 두 개의 데이터셋을 사용하였다.
@@ -216,8 +216,8 @@ e.g., 동일한 횟수의 impairment 이벤트, 연속적인 이벤트 - 간헐�
   - 이전 연구와의 차이
     - 고급 LSTM을 사용한 성능향상
     - 효율적이고 효과적인 simple option feature 셋 제안
-    - 세그먼트 품질 feature 표현에 다섯 가지 메트릭 추가
-    - LSTM 입력에 스위칭 주파수 특징을 추가하는 것이 성능 향상에 효과적인지 조사
+    - Segment quality feature 표현에 다섯 가지 메트릭 추가
+    - LSTM 입력에 스위칭 빈도 특징을 추가하는 것이 성능 향상에 효과적인지 조사
     - 패딩 옵션, 히든 유닛 수를 포함한 광범위한 평가, LSTM-SVR 비교
     - [7], [12], [14] 세 개의 기존 접근법 구현 및 비교
     - 제안된 접근법 성능 평가를 위해 두 개의 데이터셋 사용
@@ -279,7 +279,7 @@ features에 대한 설명은 아래와 같다.
 
 1) Segment Quality  
   ![Metircs Used to Represent the Segment Quality Feature](https://github.com/user-attachments/assets/d5a26fb9-9177-417e-8d3a-8eb837eed199)
-  세그먼트 품질 feature는 다양한 quality 메트릭으로 표현될 수 있다. 본 연구에서는 S-MOS, Bitrate, PSNR, PSNR-HVS, PSNR-HVS-M, SSIM, MS-SSIM, VIF 8가지 메트릭을 고려하였다.  
+  Segment quality feature는 다양한 quality 메트릭으로 표현될 수 있다. 본 연구에서는 S-MOS, Bitrate, PSNR, PSNR-HVS, PSNR-HVS-M, SSIM, MS-SSIM, VIF 8가지 메트릭을 고려하였다.  
   이 메트릭 중 S-MOS, PSNR-HVS, PSNR-HVS-M, SSIM, MS-SSIM, VIF 여섯 가지 메트릭만이 인간의 시각 시스템 특성을 고려한다.  
   일부 quality 메트릭은 측정하기 쉬운 반면, S-MOS는 이를 얻는 데에 시간이 매우 많이 든다.
 
@@ -375,6 +375,150 @@ Input Features Set option
 세번째 데이터셋에서는 앞선 데이터셋과는 다른 세션 총 144개가, 1분 길이 비디오에서 생성된다. 
 
 세션 생성을 위해 개별 비디오를 1초 길이의 세그먼트로 나누고 frame-rate 24 fps로 H.264/AVC(libx64)를 사용하여 인코딩한다. 이후 각 비디오마다 42개의 수작업 세션과 30개의 실제 스트리밍 세션으로 구성된 72개의 세션이 생성된다.
+
+![Settings of Hand-Crafted Sessions for the Newly Created Dataset](https://github.com/user-attachments/assets/14599068-282f-4e00-a227-cb24ee9f2991)
+
+테이블 2는 수제작된 세션의 설정을 보인다.
+
+품질 변동과 stalling event가 없는 #1-#5, 10개의 세그먼트와 stalling event는 없고, 주기적인 품질 변동은 있는 #6-#15, 0.25초, 0.5초, 1초, 2초, 3초, 4초의 stalling event가 있고 품질 변동은 없는 #16-#42로 구성된다.
+
+이러한 세션 생성을 위해 각 세그먼트는 표 2a에 나와 있는 QP와 해상도를 가진 5가지 버전으로 인코딩 된다. 또한 세션 #16-#42에는 stalling event가 정기적으로 들어간다.
+
+![Settings of Versions Used to Generate Real Streaming Sessions for the Newly Created Dataset](https://github.com/user-attachments/assets/f797a699-5680-4857-9266-cea6800f17ea)
+
+실제 스트리밍 세션과 관련하여 각 세그먼트는 표3과 같이 서로 다른 QP 값과 해상도에 해당하는 10개의 버전으로 인코딩된다.
+
+세그먼트 버전의 결정을 위해 [38], [39] 두 가지의 adaptation 방법을 사용하였다.
+
+해당 adaptation 방법은 모바일 네트워크로의 대역폭 추적을 사용하여 스트리밍 테스트 베드에서 실행된다.
+
+실제 스트리밍 세션은 품질 변동과 stalling event로 구성된다.
+
+테스트 조건은 Recommendation ITU-T P.913에 따라 설계되었다. 피험자의 피로를 최소화하기 위해 주관식 테스트는 서로 다른 날에 실시되는 네부분으로 나뉘어 진행되었다.
+
+각 파트의 소요 시간은 약 50분이며, 20분마다 10분의 휴식을 제공하였다. 각 피험자는 최대 두 개의 테스트 파트에 참여한다.
+
+실제 주관식 테스트를 하기 전에 피험자들은 평가 절차와 비디오 품질 점수 범위에 익숙해지도록 교육을 받는다. 세션은 14인치 화면과 검은색 배경에 무작위로 표시된다. 각 세션이 끝나면 피험자는 1점(최악)에서 5점(최고)까지의 점수 범위로 평가를 시행한다.
+
+주관식 시험에는 18세에서 41세 사이의 총 53명의 피험자가 참여하였으며, 테스트의 총 시간은 약 78시간이 소요되었다. 테스트 결과에 대한 분석은 Recommendation ITU-T P.913에 따라 수행되었으며, 두 명의 피험자는 불합격 처리하였다.
+
+거부된 피험자의 점수를 제거한 후, 각 세션은 21명의 유효한 피험자에 의해 평가되었다. 각 세션의 주관적인 Overall quality 값은 유효한 피험자의 평균 점수로 계산하였다.
+
+
+**B. Training Parameters and Cases of Input Features**
+
+제안된 접근법의 예측 성능을 평가하기 위해서 데이터셋은 412개의 세션으로 구성된 학습 세트와 나머지 103개의 세션으로 구성된 테스트 세트로 랜덤 스플릿하였다. 이 분할을 100회 반복하여 100쌍의 훈련 및 테스트 세트가 생성되었다. 다음 섹션에 제시된 결과는 100쌍의 훈련 및 테스트 세트에 대한 평균값이다.
+
+학습 과정에서 손실함수는 예측된 품질 값과 주관적 품질 값 사이의 RMSE로 계산하였으며, Adam 옵티마이저 기반의 배치 경사 하강 방식을 사용하였다.
+
+Adam 옵티마이저의 파라미터는 β1 = 0.9, β2 = 0.999, ϵ = 1e-08, 학습률 0.01로 설정하였다. 500-7000까지의 상이한 에포크들을 500 스텝마다 테스트 하였다. LSTM의 히든 유닛은 d ∈ {1,3,5} 세 가지 값으로 설정하였다.
+
+제안된 접근법에서 features의 역할을 조사하기 위해 첫 번째 옵션인 Complex option에서의 입력 features를 네 가지 경우로 고려하였다.
+
+1. Full  
+   Segment Quality, Content Chracteristics, Stalling Duration, Padding
+2. w/oCC  
+   Segment Quality, Stalling Duration, Padding
+3. w/oSQ  
+   Content Chracteristics, Stalling Duration, Padding
+4. w/oSD  
+   Segment Quality, Content Chracteristics, Padding
+
+이전 [21]의 연구에서는 스위칭 빈도, 즉 세그먼트 품질 스위칭의 수를 조사하여 스트리밍 세션의 Overall quality를 예측하는 데에 사용하였다.
+
+본 조사에서는 complex 옵션의 네 가지 features 외 스위칭 빈도 feature를 추가적으로 고려하는 확장 옵션 exi1(Extended Complex Option)을 조사하였다.
+
+세그먼트의 스위칭 빈도 feature는 세션 시작 이후 현재 세그먼트까지 누적된 세그먼트 품질 스위치 횟수로 표시된다.
+
+
+**C. Evaluation Metrics**
+
+성능 평가 메트릭으로는 100개의 테스트 세트에 대해 평균을 낸 PCC(Pearson Correlation Coefficient), RMSE(Root Mean Square Error), SROCC(Spearman rank-order correlation coefficient)를 사용한다.
+
+PCC, RMSE, SROCC는 각각 접근법에서 예측된 Overall quality 값과 주관적 테스트에서 얻은 주관적 Overall quality 값 간의 선형 관계, 차이 및 순위 상관관계를 측정하는 데에 사용된다.
+
+PCC가 높을 수록, RMSE가 낮을 수록, SROCC가 높을 수록 예측 성능이 더 좋음을 의미한다. 표 IV,V,VI,VII에서 PCC(↑), RMSE(↓), SROCC(↑)로 표기되어 있습니다.
+
+---
+
+## **V. Analysis of the Input Feature Options**
+
+**A. Performance of the Complex Option I1**
+
+본 서브섹션에서는 complex option I1에서 features, 특히 컨텐츠 특성 및 가장 좋은 세그먼트 품질 측정 메트릭의 이점이 미치는 영향을 조사할 예정이다.
+
+이를 위해 앞선 네 가지 입력 feature 케이스를 평가한다. 여기서는 adLSTM을 사용하고 에포크는 500~7000, 히든 유닛은 5로 설정한다.
+
+![PCC values averaged over the 100 sets for the Full case using the diffrent quality metrics of the option I1 and the adLSTM network](https://github.com/user-attachments/assets/15a02c4a-dd2f-425c-93a7-ffe8fd8fbb86)
+
+그림 9는 여러 품질 메트릭을 사용하여 Full 케이스에서 100개의 테스트 세트에 대해 평균을 낸 PCC 값을 보인다. S-MOS가 일관되게 가장 높은 PCC 값을 나타내는 것을 볼 수 있다. 이는 S-MOS가 세그먼트 품질 특징을 나타내는 가장 좋은 지표임을 보인다.
+
+PSNR은 단순한 측정 항목임에도, PCC 값은 S-MOS보다 약간 낮다는 것이다. 특히 가장 높은 PCC 값을 보인 PSNR의 경우 0.942(epochs=4000), S-MOS의 경우 0.966(epochs=1500)이었다.
+
+또한 PSNR-variants 및 VIF에 해당하는 PCC 값도 S-MOS에 비해 약간 낮았다. 따라서 컨텐츠 특성이 포함된 경우 Segment quality feature를 표현하기 위해 S-MOS 대신 PSNR, PSNR-variant, VIF를 사용하여도 무방하다.
+
+![Best performance of the proposed approach using the adLSTM network for the Full and w/oCC cases of the option I1 over the test sets](https://github.com/user-attachments/assets/c6417e22-f64f-4bf0-8c6a-150d13de5259)
+
+그림 11은 서로 다른 Segment quality 메트릭을 사용할 때 테스트 세트에 대한 Full 케이스, w/oCC 케이스의 최고 성능을 비교한 것이다. 
+
+S-MOS를 제외한 모든 지표에서 Full 케이스가 w/oCC 케이스에 비해 훨씬 더 높은 성능을 보이는 것을 확인할 수 있다. 가장 큰 성능 차이는 PSNR과 VIF에서 보였다.
+
+한편, S-MOS를 사용할 경우에 Full 케이스와 w/oCC 케이스의 성능이 비슷한데, 이는 Segment quality feature를 표현하기 위해 S-MOS를 사용할 때에는 컨텐츠 특성 feature를 추가로 사용해도 큰 개선이 없음을 의미한다. 반면, BR, PSNR, PSNR-variant, SSIM, MS-SSIM, VIF 메트릭에서는 컨텐츠 특성을 고려하는 것이 유리하다.
+
+PSNR, PSNR-HVS, PSNR-HVS-M 세 가지 메트릭 중 w/oCC 케이스와 비교한 Full 케이스에서의 이득은 PSNR에서 가장 크고 PSNR-HVS-M이 가장 작았다. 이는 인간의 시각 시스템을 추가로 고려하는 PSNR-variants가 기존 PSNR보다 컨텐츠 특성에 덜 의존한다는 것을 나타낸다. SSIM과 그 변형인 MS-SSIM에서도 비슷한 결론을 찾을 수 있었다.
+
+
+![Best Performance of the Proposed Approach for the Difference Input Cases of Full, w/oSD, w/oSQ, and exI1 Using S-MOS and the adLSTM Network for the Test Sets.png](https://github.com/user-attachments/assets/8272b2c7-5601-43a8-93c2-1bd958722a07)
+
+표 4는 Full, w/oSD, w/oSQ 및 exI1의 다양한 입력 케이스에 대한 제안된 접근법의 최고 성능을 보여준다.
+
+Stalling Duration feature와 Segment quality feature를 입력에서 제외하면 제안한 접근법의 성능이 크게 저하되는 것을 볼 수 있다.
+
+특히 Stalling Duration feature를 고려하지 않은 케이스(w/oSD)에서는 PCC와 SROCC 값이 0.966에서 0.838, 0.965에서 0.820으로 떨어지는 반면 RMSE값은 0.248에서 0.518로 증가하는 것을 볼 수 있다. 이는 Stalling event가 세션의 Overall quality에 상당한 영향을 미친다는 것을 나타낸다.
+
+w/oSD의 경우와 비교하여 w/oSQ의 경우 PCC 값은 훨씬 낮고(0.734-0.518), SROCC 값은 현저히 낮다(0.584-0.820). 이는 제안된 접근법에서 Segment Quality feature가 Stalling Duration feature보다 더 중요한 역할을 한다는 것을 의미한다.
+
+
+또한 스위칭 빈도 feature를 추가하면 제안한 접근법의 성능을 향상시킬 수 있는지 여부를 조사한다. 표 4에서 실제로 스위칭 빈도 feature가 큰 성능 향상을 가져올 수 없음을 보였다. 심지어 성능이 약소하게 저하되는 결과를 보였다.
+
+특히 PCC, RMSE, SROCC 값은 Full 케이스에서 각각 0.966, 0.248, 0.965이고, exI1 옵션의 경우 0.963, 0.257, 0.963이다. 이는 스위칭 빈도 feature가 스위칭의 폭이 미치는 영향을 구분할 수 없다는 사실로 설명할 수 있다[37]. 따라서 스위칭 빈도가 Overall quality에 미치는 영향이 무시할 수 있는 수준이며, 이는 [42]의 결과와 일치한다.
+
+논문의 이후 부분에서는 complex option I1에 최고의 성능을 보인 S-MOS를 사용하였다.
+
+
+**B. Comparison of Input Options**
+
+본 하위 섹션에서는 Simple option(I2), Complex option(I1), I1과 I2를 조합한 옵션의 성능 비교를 보인다.
+
+![Prediction performance of the proposed approach using the simple, the complex, and the combination options](https://github.com/user-attachments/assets/b0ca28f9-7abb-484f-bde8-38c15738aef3)
+
+그림 10은 각 옵션에 대해 adLSTM을 사용하여 얻은 결과이다.
+
+Complex 및 조합 옵션에서는 Full 케이스와 S-MOS 품질 메트릭이 사용된다. 그림 10에서 complex 옵션과 조합 오션의 성능이 테스트 세트에서 동일하다는 것을 알 수 있다.
+
+따라서 simple 옵션의 feature를 추가로 사용한다고 하여 성능이 크게 향상되지는 않는다. 즉, I1, I2 옵션의 조합은 중복됨을 의미한다.
+
+또한 simple 옵션 I2의 성능이 매우 높게 나타난 것도 눈여겨 볼만 하다.
+
+특히 에포크 수가 3500개일 때 PCC=0.963, RMSE=0.259, SROCC=0.963으로 최고 성능에 도달하는 것을 확인할 수 있다. 에포크 수가 3500개 이상으로 증가하면 학습 성능은 약소하게 증가하지만 테스트 성능도 감소한다.
+
+1500개 이상의 높은 에포크에서는 simple 옵션과 복합 옵션의 성능이 매우 비슷하게 나타났다. 구체적으로 에포크 수가 1500개로 최고 성능 부근일 때 복합 옵션은 PCC, RMSE, SROCC에서 각 0.005, 0.017, 0.004의 이득을 보였다.
+
+simple 옵션이 높은 성능을 보이면서도 복잡성에 있어 유리하기에 simple 옵션 I2가 효율적이고 효과적이라 할 수 있다.
+
+또한 이는 비트스트림 수준의 파라미터가 세그먼트 품질과 컨텐츠 특성을 대체할 수 있음을 시사한다.
+
+
+입력 옵션에 대한 심층적인 이해를 위해 LSTM 대신 단순 회귀 모델인 SVR을 사용하여 비교를 수행하였다.
+
+결과는 표 5에서 확인할 수 있으며, 비슷한 결론을 도출할 수 있었다. 특히, complex 옵션 I1(Full case)와 조합 옵션의 성능이 비슷하고, 둘 다 simple 옵션 I2보다 약간의 높은 성능만을 보였다.
+
+또한 w/oSQ, w/oSD의 경우 Full 케이스에 비해 성능이 상당히 낮게 나타난 것에서 Segment quality와 Stalling Duration feature의 중요한 역할이 다시 한 번 확인할 수 있었다.
+
+입력 옵션에 대한 자세한 이야기는 섹션 VIII에서 다룬다.
+
+
+
 
 
 
