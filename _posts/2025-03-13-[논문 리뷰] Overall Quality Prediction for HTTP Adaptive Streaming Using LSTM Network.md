@@ -1,6 +1,6 @@
 ---
 title: "[논문 리뷰] Overall quality Prediction for HTTP Adaptive Streaming Using LSTM Network"
-published: False
+published: True
 excerpt: "Huyen T. T. Tran, Duc V. Nguyen, Duong D. Nguyen, Nam Pham Ngoc and Truong Cong Thang (IEEE TRANSACTIONS ON CIRCUITS AND SYSTEMS FOR VIDEO TECHNOLOGY • AUGUST 2021)"
 ---
 
