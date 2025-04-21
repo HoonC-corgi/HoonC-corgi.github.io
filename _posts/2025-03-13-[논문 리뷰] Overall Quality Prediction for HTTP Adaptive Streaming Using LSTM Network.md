@@ -4,6 +4,29 @@ published: True
 excerpt: "Huyen T. T. Tran, Duc V. Nguyen, Duong D. Nguyen, Nam Pham Ngoc and Truong Cong Thang (IEEE TRANSACTIONS ON CIRCUITS AND SYSTEMS FOR VIDEO TECHNOLOGY • AUGUST 2021)"
 ---
 
+<!-- TOC -->
+* [논문 리뷰를 시작하며](#논문-리뷰를-시작하며)
+* [한글 번역 및 코멘트](#한글-번역-및-코멘트)
+  * [**Abstract**](#abstract)
+    * [Notes](#notes)
+  * [**I. Introduction**](#i-introduction)
+    * [Notes](#notes-1)
+  * [**II. Architecture of the Proposed Approach**](#ii-architecture-of-the-proposed-approach)
+    * [Notes](#notes-2)
+  * [**III. Input Features**](#iii-input-features)
+    * [Notes](#notes-3)
+  * [**IV. Datasets and Experiment Settings**](#iv-datasets-and-experiment-settings)
+  * [**V. Analysis of the Input Feature Options**](#v-analysis-of-the-input-feature-options)
+    * [Notes](#notes-4)
+  * [**VI. Analysis of LSTM networks**](#vi-analysis-of-lstm-networks)
+    * [Notes](#notes-5)
+  * [**VII. Comparison with Existing Approaches**](#vii-comparison-with-existing-approaches)
+    * [Notes](#notes-6)
+  * [**VIII. Discussions**](#viii-discussions)
+    * [Notes](#notes-7)
+  * [**IX. Conclusion**](#ix-conclusion)
+<!-- TOC -->
+
 ---
 
 # 논문 리뷰를 시작하며
