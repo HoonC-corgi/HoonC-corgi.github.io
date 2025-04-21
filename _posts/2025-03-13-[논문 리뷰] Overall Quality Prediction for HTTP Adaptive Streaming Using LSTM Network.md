@@ -20,7 +20,7 @@ excerpt: "Huyen T. T. Tran, Duc V. Nguyen, Duong D. Nguyen, Nam Pham Ngoc and Tr
 ---
 
 # 한글 번역 및 코멘트
-## Abstract
+## **Abstract**
 
 HAS는 현대 멀티미디어 전송을 위한 가장 인기 있는 솔루션이다.
 
@@ -58,7 +58,7 @@ overall quality는 선형 회귀 모듈을 사용하는 LSTM 네트워크의 출
 
 ---
 
-## I. Introduction
+## **I. Introduction**
 HAS에서 비디오는 상이한 품질 수준의 여러 버전으로 인코딩 되며, 각 인코딩 버전은 세그먼트 시퀀스로 나뉜다.
 
 세그먼트는 공용 웹 서버에서 호스팅 되는데, 네트워크 상태에 따라서 클라이언트는 적합한 세그먼트의 버전을 결정하고, 웹 서버에 해당 버전을 요청하기 위한 HTTP requests를 전송한다.
@@ -223,7 +223,7 @@ e.g., 동일한 횟수의 impairment 이벤트, 연속적인 이벤트 - 간헐�
     - 제안된 접근법 성능 평가를 위해 두 개의 데이터셋 사용
 
 ---
-## II. Architecture of the Proposed Approach
+## **II. Architecture of the Proposed Approach**
 
 본 섹션에서는 제안된 접근법의 일반적인 구조를 설명한다. 연구에 사용된 두 타입을 상세히 설명한다.
 
@@ -255,7 +255,7 @@ Overall quality는 impairment event 간의 시간적 관계에 크게 의존한�
 adLSTM에서 어텐션 적용한 걸 보니, 막연하지만 바다나우 어텐션 등 어텐션, LLM 쪽 시도해봐도 괜찮을듯
 
 ---
-## III. Input Features
+## **III. Input Features**
 
 본 섹션에서는 complex option과 simple option feature set 두 가지의 입력 옵션을 제안한다.
 
@@ -364,7 +364,7 @@ Input Features Set option
         비디오 비트스틺으로부터 쉽게 구할 수 있음. Bitrate는 complex option에서 quality 메트릭으로도 선택 가능함.  
 
 ---
-## IV. Datasets and Experiment Settings
+## **IV. Datasets and Experiment Settings**
  
 본 섹션에서 데이터셋 생성에 대해 설명한다. 이후 제안된 접근법의 학습 파라미터, 입력 feature 예시, 연구에서 사용된 성능 평가 메트릭과 같은 실험 환경을 제시한다.
 
@@ -748,7 +748,7 @@ WaterlooSQoE-II-Case#2에서는 frame-rate 스트리밍 세션을 학습 세트�
 => complex 옵션 사용 시에는 baLSTM 사용하면 웬만하면 다 좋음. 
 
 ---
-##  VIII. Discussions
+## **VIII. Discussions**
 
 위의 실험 결과에서 세그먼트, LSTM에서 수집한 feature를 입력으로 사용하면 HAS 세션의 Overall quality를 예측하는 데에 매우 효과적임이 분명히 알 수 있다.
 
