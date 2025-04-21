@@ -1,0 +1,118 @@
+---
+title: "[논문 리뷰] 제목"
+published: False
+excerpt: "저자"
+---
+
+---
+
+# 논문 리뷰를 시작하며
+
+[제목](링크)
+
+> 본 게시글은 위 논문을 스스로 번역, 재정리한 내용을 포함합니다.
+
+---
+
+# 한글 번역 및 코멘트
+## Abstract
+
+---
+
+### Notes
+
+---
+
+## **I. Introduction**
+
+
+---
+### Notes
+
+
+---
+## **II.** 
+
+
+---
+### Notes
+
+
+---
+## **III.** 
+
+
+
+---
+### Notes
+
+
+---
+## **IV.** 
+
+
+
+---
+
+## **V.** 
+
+
+
+---
+### Notes
+
+
+---
+
+## **VI.** 
+
+
+---
+### Notes
+
+
+---
+## **VII.** 
+
+
+---
+### Notes
+
+
+---
+## **VIII.** 
+
+
+---
+### Notes
+
+---
+
+> ### Profile
+>
+>
+> ***Seong Hun KIM***
+>
+>
+> **M.S. course**  
+> **Dept. of Computer Science Engineering | Yeungnam University, Repulic of Korea**
+>
+> ![yu signature](https://github.com/HoonC-corgi/Convolution_Filter_Application/assets/118245330/37c81d9e-cfb8-4aee-8497-ff1071b2458b)
+>
+> **Phone** [010 - 6685 - 1140](tel:010-6685-1140)  
+> **Mail** [tgh7544@naver.com](mailto:tgh7544@naver.com)  
+> **LinkTree** [https://linktr.ee/HoonC_corgi](https://linktr.ee/HoonC_corgi)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
